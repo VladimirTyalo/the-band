@@ -1,0 +1,49 @@
+{
+  "name": "the_band",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Basic gulp automatisation process",
+  "author": "Vladimir Tyalo",
+  "repository": {
+    "type": "git"
+  },
+  "devDependencies": {
+    "autoprefixer": "6.3.6",
+    "browser-sync": "2.12.10",
+    "css-mqpacker": "^5.0.1",
+    "del": "^2.2.1",
+    "editorconfig-tools": "0.1.1",
+    "gulp": "3.9.1",
+    "gulp-csso": "^2.0.0",
+    "gulp-htmlhint": "^0.3.1",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-plumber": "1.1.0",
+    "gulp-postcss": "6.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "2.3.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-svgmin": "^1.2.2",
+    "gulp-svgstore": "^6.0.0",
+    "gulp-uglify": "^2.0.0",
+    "htmlhint-stylish": "^1.0.3",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.2.1",
+    "postcss-reporter": "^1.4.1",
+    "run-sequence": "^1.2.1",
+    "stylelint": "^7.1.0",
+    "stylelint-config-idiomatic-order": "^2.0.0",
+    "stylelint-config-standard": "^12.0.0"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "start": "npm run build && gulp serve"
+  },
+  "engines": {
+    "node": "^5.8.0",
+    "npm": "^3.9.6"
+  },
+  "dependencies": {
+    "gulp-sass-glob": "^1.0.6"
+  }
+}

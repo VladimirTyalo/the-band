@@ -1,0 +1,14 @@
+// inline block
+@mixin block-align($display: "inline-block", $vertical: "top") {
+  display: #{$display};
+  vertical-align: #{$vertical};
+}
+
+@mixin clerafix() {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
