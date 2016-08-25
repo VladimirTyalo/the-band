@@ -1,0 +1,87 @@
+.catalog {
+  float: left;
+  box-sizing: border-box;
+  width: 50%;
+  padding-top: 100px;
+  padding-right: 50px;
+
+  &__album-photo {
+    display: block;
+    margin-bottom: 70px;
+  }
+
+
+  &__album-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+    text-align: justify;
+    @include block-align("block");
+  }
+
+  &__album-title,
+  &__album-release,
+  &__listen,
+  &__buy {
+    @include block-align("inline-block", "top");
+  }
+
+  &__album-title,
+  &__album-release {
+    padding-right: 30px;
+    font-weight: normal;
+    font-family: $family-oswaldlight;
+    @include font(30px, 40px);
+  }
+
+  &__album-title {
+    width: 35%;
+    padding-left: -30px;
+  }
+
+  &__album-release {
+    position: relative;
+    padding-right: 55px;
+    padding-left: 55px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.47em;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: $color-ebb-1;
+    }
+  }
+
+  &__listen,
+  &__buy {
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $family-oswaldregular;
+    @include font(18px, 20px);
+  }
+
+  &__listen {
+    margin-right: 30px;
+    background: $color-ebb-1;
+    color: $color-sand-dune;
+  }
+
+  &__buy {
+    background: $color-sand-dune;
+    color: $color-alabaster;
+  }
+
+}

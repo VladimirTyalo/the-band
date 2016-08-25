@@ -1,0 +1,12 @@
+.tours {
+
+  background: $color-ebb-2;
+  .container {
+    position: relative;
+    min-height: 965px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+}

@@ -1,0 +1,90 @@
+.contacts {
+  background: url("../img/instruments.jpg") no-repeat;
+
+  .container {
+    min-height: 960px;
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: 160px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $family-oswaldbold;
+    @include font(80px, 100px);
+  }
+
+  &__phone {
+    box-sizing: border-box;
+    white-space: nowrap;
+    @include block-align("inline-block", "top");
+    margin-bottom: 45px;
+    padding: 0 65px 30px 65px;
+    color: $color-ebb-1;
+    text-align: center;
+    text-decoration: none;
+    font-weight: normal;
+    font-family: $family-oswaldbold;
+    @include font(72px, 78px);
+    text-transform: uppercase;
+    background: url("../img/dotted-line-light.png") repeat-x;
+    background-position: bottom 0 left 0;
+  }
+
+  &__subscribe {
+    font-family: $family-oswaldbold;
+    font-size: 0;
+  }
+
+  &__email-submit {
+    @include font(36px, 55px);
+    background: $color-zeus;
+    text-transform: uppercase;
+    border: none;
+    color: $color-ebb-1;
+    padding-left: 30px;
+    padding-right: 30px;
+    @include block-align("inline-block", "bottom");
+  }
+
+  &__email-wrapper {
+    @include block-align("inline-block", "bottom");
+    border: 5px solid $color-zeus;
+  }
+
+  &__email {
+    @include font(36px, 46px);
+    display: block;
+    background: none;
+    border: none;
+    padding-left: 10px;
+  }
+  &__footer {
+    margin-top: 370px;
+    padding-bottom: 70px;
+    @include clearfix();
+  }
+
+  &__copyright {
+    float: left;
+    margin-top: 35px;
+    color: $color-ebb-1;
+    font-family: $family-lorabold;
+    @include font(18px, 18px);
+  }
+
+  &__menu {
+    margin-top: 0 !important;
+    float: right;
+    white-space: nowrap;
+    a {
+      color: $color-ebb-1;
+      padding-bottom: 0;
+    }
+  }
+
+}

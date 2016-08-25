@@ -1,0 +1,42 @@
+.header {
+  width: 100%;
+  background: #8f746a;
+  background-image: url("./../img/guitar.jpg"), radial-gradient(farthest-corner at 40% 50% , #958178 0%, #72574b 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__title-wrapper {
+    width: 100%;
+    @include clearfix();
+  }
+
+  &__title {
+    float: right;
+    min-height: 550px;
+    width: 430px;
+    padding-top: 242px;
+    margin-top: 0;
+    margin-right: 60px;
+    margin-bottom: 45px;
+    background: url("./../img/words.png");
+    background-position: top 63px right 6px;
+    background-repeat: no-repeat;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 6.25em;
+    font-family: $family-oswaldbold;
+    line-height: 1.12;
+
+    span:first-child {
+      margin-bottom: 10px;
+      color: $color-ebb-1;
+    }
+
+    span:nth-child(2) {
+      color: $color-zeus;
+      margin-left: -10px;
+    }
+  }
+}
+
+

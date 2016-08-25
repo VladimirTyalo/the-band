@@ -1,0 +1,126 @@
+.schedule {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  overflow: hidden;
+  max-height: 380px;
+
+  &__inner {
+    @include block-align("inline-block", "top");
+    text-align: right;
+    position: relative;
+    top: 50px;
+    left: 50%;
+    transform: translate3d(-50%, -340px, 0) rotate(-90deg);
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-right: 2px solid $color-ebb-1;
+  }
+
+  &__prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    min-height: 90%;
+    display: block;
+    background: $color-ebb-2;
+    z-index: 20;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      background: url("./../img/icons/icon-l-arrow.svg") no-repeat;
+      height: 53px;
+      border: none;
+      backgound-size: cover;
+      padding: 0;
+      top: 50%;
+      left: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 70px;
+      height: 2px;
+      background: $color-ebb-1;
+      top: 56px;
+      left: -10px;
+      z-index: 30;
+    }
+
+  }
+
+  &__next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    min-height: 90%;
+    display: block;
+    background: $color-ebb-2;
+    z-index: 20;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      background: url("./../img/icons/icon-r-arrow.svg") no-repeat;
+      height: 53px;
+      border: none;
+      backgound-size: cover;
+      padding: 0;
+      top: 50%;
+      right: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 70px;
+      height: 2px;
+      background: $color-ebb-1;
+      top: 56px;
+      left: -10px;
+      z-index: 30;
+    }
+
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+    margin-right: 22px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: $color-sand-dune;
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @include font(16px, 20px);
+    font-family: $family-lorabold;
+    color: $color-sand-dune;
+    min-height: 20px;
+    display: block;
+    text-align: right;
+  }
+}

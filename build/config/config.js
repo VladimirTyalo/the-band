@@ -48,7 +48,7 @@ module.exports = {
   STYLE_LINT: {
 
     // "extends": "stylelint-config-standard",
-    "extends": "stylelint-config-idiomatic-order",
+    //"extends": "stylelint-config-idiomatic-order",
     "rules": {
       "block-no-empty": true,
       "color-no-invalid-hex": true,
@@ -59,14 +59,15 @@ module.exports = {
       "media-feature-colon-space-before": "never",
       "media-feature-name-no-vendor-prefix": true,
       "max-empty-lines": 5,
-      "number-leading-zero": "never",
+      "number-leading-zero": "always",
       "number-no-trailing-zeros": true,
       "property-no-vendor-prefix": true,
       "selector-list-comma-space-before": "never",
       "selector-list-comma-newline-after": "always",
       "selector-no-id": true,
       "string-quotes": "double",
-      "value-no-vendor-prefix": true
+      "value-no-vendor-prefix": true,
+      "indentation": 2
       //  "declaration-block-properties-order": ["content", "display", "float", "flex", "width", "height", "position", "top", "right", "bottom", "left", "margin", "padding", "border", "font", "background"]
       //}
     }

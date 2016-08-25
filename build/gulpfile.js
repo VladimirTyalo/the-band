@@ -23,7 +23,7 @@ const gulp         = require("gulp"),
       jshint       = require("gulp-jshint"),
       htmlhint     = require("gulp-htmlhint");
 
-gulp.task("style", ["lint-styles"], function () {
+gulp.task("style", function () {
   gulp.src(config.SASS_MAIN_FILE)
       .pipe(plumber())
       .pipe(gulpGlob())
@@ -78,7 +78,7 @@ gulp.task("lint-html", function () {
              .pipe(htmlhint.failReporter({suppress: true}));
 });
 
-gulp.task("serve", ["lint-js", "lint-html"], function () {
+gulp.task("serve", function () {
   server.init({
     server: "./build",
     notify: false,
@@ -86,22 +86,20 @@ gulp.task("serve", ["lint-js", "lint-html"], function () {
     ui: false
   });
 
-  gulp.watch(config.SASS_FILES, ["style"]).on('change', server.reload);
-  gulp.watch(config.HTML_FILES).on("change", function (file) {
-    // copy html file to the build folder
-    gulp.src(file.path)
-        .pipe(plumber())
-        .pipe(htmlhint())
-        .pipe(htmlhint.reporter("htmlhint-stylish"))
-        .pipe(htmlhint.failReporter({suppress: true}))
-        .pipe(gulp.dest("build"))
-        .pipe(server.reload({stream: true}));
+  gulp.watch(config.SASS_FILES, ["lint-styles", "style"]);
+
+  gulp.watch(config.HTML_FILES, ["lint-html"]).on("change", function () {
+    return gulp.src(config.HTML_FILES, {base: "."})
+               .pipe(plumber())
+               .pipe(gulp.dest("build"))
+               .pipe(server.reload({stream: true}));
   });
 
   gulp.watch(config.JS_FILES, ["lint-js"]).on("change", function () {
     return gulp.src(config.JS_FILES, {base: "."})
                .pipe(plumber())
-               .pipe(gulp.dest("build"));
+               .pipe(gulp.dest("build"))
+               .pipe(server.reload({stream: true}));
   });
 
 });

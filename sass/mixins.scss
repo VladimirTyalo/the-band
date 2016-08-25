@@ -4,7 +4,7 @@
   vertical-align: #{$vertical};
 }
 
-@mixin clerafix() {
+@mixin clearfix() {
   &::after {
     content: "";
     display: table;
@@ -12,3 +12,34 @@
   }
 }
 
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin line-height($height) {
+  line-height: $height;
+  line-height: calculateRem($height);
+}
+
+@mixin font($font-size, $line-height) {
+  @include font-size($font-size);
+  @include line-height($line-height);
+}
+
+// hide element but element still exceccable to screen readers
+@mixin visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}

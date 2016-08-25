@@ -1,0 +1,139 @@
+.about {
+  width: 100%;
+  background: $color-pampas;
+
+  &__slider {
+    position: relative;
+    padding-top: 200px;
+  }
+
+  &__photo {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    top: 436px;
+    z-index: 10;
+    width: 60px;
+    height: 100px;
+    border: none;
+    backgound-size: 33px 59px;
+  }
+
+  &__prev {
+    left: -1px;
+    background: url("./../img/icons/icon-l-arrow.svg") no-repeat;
+  }
+
+  &__next {
+    right: -5px;
+    background: url("./../img/icons/icon-r-arrow.svg") no-repeat;
+  }
+
+  &__members {
+    position: absolute;
+    top: 262px;
+    right: 17.4%;
+    z-index: 20;
+    display: table;
+    list-style: none;
+    transform: rotate(-90deg);
+  }
+
+  &__member {
+    display: table-row;
+    color: $color-sand-dune;
+    text-transform: uppercase;
+    font-family: $family-lora;
+    opacity: 0.3;
+
+    font-width: bold;
+    @include font(13px, 22px);
+
+    &--active {
+      opacity: 1;
+    }
+
+    span {
+      display: table-cell;
+      padding: 10px 15px 10px 15px;
+    }
+
+    span:first-child {
+      position: relative;
+      text-align: right;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 1em;
+        right: -7px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: $color-sand-dune;
+      }
+    }
+  }
+
+  &__slide {
+    font-size: 0;
+  }
+
+  &__person {
+    position: relative;
+    width: 50%;
+
+    @include block-align("inline-block", "bottom");
+  }
+
+  &__full-name {
+    position: absolute;
+    bottom: 38px;
+    left: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $family-oswaldbold;
+
+    @include font(100px, 110px);
+
+    span:first-child {
+      padding-left: 30px;
+      color: $color-sand-dune;
+    }
+
+    span:nth-child(2) {
+      color: $color-zeus;
+    }
+  }
+
+  &__content {
+    width: 50%;
+    padding-top: 290px;
+    padding-bottom: 20px;
+
+    @include block-align("inline-block", "top");
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 90px;
+    font-family: $family-oswaldbold;
+
+    @include font(36px, 78px);
+  }
+
+  &__text {
+    font-family: $family-lora;
+    width: 60%;
+    margin: 0 auto;
+    padding-right: 88px;
+    @include font(18px, 36px);
+  }
+
+}

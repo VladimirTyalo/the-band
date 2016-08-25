@@ -1,6 +1,127 @@
 body {
-  width: 10px;
-  height: 10px;
-  background: #effab6;
-  color: #6f1400;
+  font-size: 16px;
+  color: $color-zeus;
+}
+
+img {
+  max-width: 100%;
+  heigth: auto;
+}
+
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: "oswaldbold";
+  src: url("./../fonts/oswald-bold-webfont.woff2") format("woff2"), url("./../fonts/oswald-bold-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "oswaldlight";
+  src: url("./../fonts/oswald-light-webfont.woff2") format("woff2"),
+  url("./../fonts/oswald-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "oswaldregular";
+  src: url("./../fonts/oswald-regular-webfont.woff2") format("woff2"),
+  url("./../fonts/oswald-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "loraitalic";
+  src: url("./../fonts/lora-italic-webfont.woff2") format("woff2"),
+  url("./../fonts/lora-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "lorabold";
+  src: url("./../fonts/lora-bold-webfont.woff2") format("woff2"),
+  url("./../fonts/lora-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+
+}
+
+h2 {
+  @include font(36px, 78px);
+  color: $color-zeus;
+  font-family: $family-oswaldregular;
+  font-weight: normal;
+}
+
+h3 {
+  @include font(30px, 40px);
+  color: $color-zeus;
+  font-family: $family-oswaldlight;
+  font-weight: normal;
+}
+
+a {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+// customization of a scrollbar for webkit
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* this targets the default scrollbar (compulsory) */
+
+::-webkit-scrollbar-track {
+  background-color: $color-ebb-3;
+}
+
+/* the new scrollbar will have a flat appearance with the set background color */
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-silver-rust;
+}
+
+/* this will style the thumb, ignoring the track */
+
+//::-webkit-scrollbar-button {
+//  background-color: $color-silver-rust;
+//} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+::-webkit-scrollbar-corner {
+  background-color: $color-silver-rust;
+}
+
+/* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+// customization of a scrollbar for IE
+body {
+  scrollbar-face-color: $color-silver-rust;
+}
+
+// customizing input feilds
+
+// styling placeholder
+*::-webkit-input-placeholder {
+  color: $color-almond-frost;
+}
+
+*:-moz-placeholder {
+  /* FF 4-18 */
+  color: $color-almond-frost;
+}
+
+*::-moz-placeholder {
+  /* FF 19+ */
+  color: $color-almond-frost;
+}
+
+*:-ms-input-placeholder {
+  /* IE 10+ */
+  color: $color-almond-frost;
 }

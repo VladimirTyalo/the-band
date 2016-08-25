@@ -1,0 +1,87 @@
+.player {
+  float: right;
+  box-sizing: border-box;
+  width: 50%;
+  padding-top: 100px;
+  padding-left: 100px;
+  &__song-info {
+    margin-top: 0;
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__current-album {
+    font-family: $family-oswaldlight;
+
+    @include font(30px, 40px);
+  }
+
+  &__current-song {
+    color: $color-sand-dune;
+    font-family: $family-loraitalic;
+  }
+
+  &__current-number {
+    font-family: $family-loraitalic;
+  }
+
+  &__controls {
+    min-height: 240px;
+    width: 100%;
+    background: lightgray;
+  }
+
+  &__songs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__song-link {
+    display: table;
+    width: 100%;
+    padding: 5px 0;
+    text-decoration: none;
+
+    span {
+      display: table-cell;
+      color: $color-sand-dune;
+      font-family: $family-loraitalic;
+    }
+  }
+
+  &__icon-play {
+    height: 20px;
+    padding-left: 30px;
+    background: url("./../img/icons/icon-play.svg") no-repeat;
+    opacity: 0.3;
+  }
+
+  &__song-number {
+    width: 30px;
+  }
+
+  &__song-title {
+    padding-right: 30px;
+    white-space: nowrap
+  }
+
+  &__song-dots {
+    width: 100%;
+    background: url("./../img/dotted-line.png") repeat-x;
+    background-position: bottom 4px left 0;
+  }
+
+  &__song-duration {
+    padding-left: 30px;
+    text-align: right;
+  }
+
+  &__song-link--active .player__icon-play {
+    opacity: 1;
+  }
+;
+
+}

@@ -1,0 +1,73 @@
+.orders {
+  overflow-y: scroll;
+  width: 70%;
+  height: 280px;
+  margin: 460px auto 110px auto;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    padding-right: 100px;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1);
+    list-style: none;
+  }
+
+  &__item {
+    display: table;
+    width: 100%;
+    padding: 18px 0;
+    background: url("./../img/dotted-line.png") repeat-x;
+    background-position: bottom 0 left 0;
+  }
+
+  &__time,
+  &__place,
+  &__buy {
+    display: table-cell;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  &__time {
+    width: 2em;
+    border-right: 6px solid $color-ebb-1;
+    font-family: $family-oswaldbold;
+    span {
+      @include block-align("inline-block", "center");
+    }
+    span:first-child {
+      width: 55px;
+      text-align: left;
+      @include font(50px, 70px);
+    }
+
+    span:nth-child(2) {
+      padding-right: 15px;
+      text-transform: uppercase;
+      @include font(23px, 23px);
+    }
+  }
+
+  &__buy {
+    display: block;
+    width: 4em;
+    padding: 10px;
+    background: $color-sand-dune;
+    color: $color-alabaster;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $family-oswaldregular;
+    @include font(18px, 20px);
+  }
+
+  &__place {
+    width: 100%;
+    padding-left: 20px;
+    text-align: left;
+    text-transform: capitalize;
+    font-family: $family-oswaldlight;
+    @include font(30px, 50px);
+  }
+
+}

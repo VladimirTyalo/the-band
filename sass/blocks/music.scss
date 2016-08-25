@@ -1,0 +1,7 @@
+.music {
+
+  .container {
+    @include clearfix();
+    padding-bottom: 130px;
+  }
+}
