@@ -2,14 +2,413 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css">
+
   </head>
   <body>
-    <div class="container">
-      <h1>Simple index.html to start with</h1>
-    </div>
 
+    <header class="header" id="home">
+      <div class="container">
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="#home" class="menu__link">home</a>
+            </li>
+            <li class="menu__item">
+              <a href="#about" class="menu__link">about</a>
+            </li>
+            <li class="menu__item">
+              <a href="#music" class="menu__link">music</a>
+            </li>
+            <li class="menu__item">
+              <a href="#tours" class="menu__link">tours</a>
+            </li>
+            <li class="menu__item">
+              <a href="#contacts" class="menu__link">contacts</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__title-wrapper">
+          <h1 class="header__title">
+            <span>we are</span>
+            <br>
+            <span>the band</span>
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="about" id="about">
+        <div class="container">
+          <div class="about__slider">
+            <button class="about__prev"></button>
+            <button class="about__next"></button>
+
+            <ul class="about__members">
+              <li class="about__member">
+                <span class="about__name">Lawrie Alton</span>
+                <span class="about__role">Vocalist</span>
+              </li>
+              <li class="about__member">
+                <span class="about__name">Charles Timmy</span>
+                <span class="about__role">Guitar</span>
+              </li>
+              <li class="about__member about__member--active">
+                <span class="about__name">curt sheard</span>
+                <span class="about__role">Bass</span>
+              </li>
+              <li class="about__member">
+                <span class="about__name">Cade Ryker</span>
+                <span class="about__role">drums</span>
+              </li>
+              <li class="about__member">
+                <span class="about__name">Tommie Brendan</span>
+                <span class="about__role">electronics</span>
+              </li>
+            </ul>
+
+            <div class="about__slides">
+              <article class="about__slide">
+                <div class="about__person">
+                  <img src="img/black-star-small.jpg" alt="black-star" class="about__photo" width="730" height="762">
+                  <h2 class="about__full-name">
+                    <span>Curt</span>
+                    <br>
+                    <span>Sheard</span>
+                  </h2>
+                </div>
+                <div class="about__content">
+                  <h3 class="about__title">Meet out band</h3>
+                  <p class="about__text">
+                    Court Sheard, swag iPhone neutra williamsburg, sriracha you probably haven't heard of them PBR&B marfa seitan. Four dollar toast wayfarers helvetica etsy, affogato pinterest schlitz. Squid yr mlkshk, pinterest pour-over polaroid photo booth. Yr fixie plaid kogi.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <section class="music" id="music">
+        <div class="container">
+          <div class="catalog">
+            <img class="catalog__album-photo" src="img/discs.jpg" alt="album surprise without flaws">
+            <h2 class="catalog__title">Discography</h2>
+            <ul class="catalog__album-list">
+              <li class="catalog__item">
+                <span class="catalog__album-title">Surprise Without</span>
+                <span class="catalog__album-release">2015</span>
+                <a href="" class="catalog__listen">listen</a>
+                <a href="" class="catalog__buy">buy</a>
+              </li>
+              <li class="catalog__item">
+                <span class="catalog__album-title">Mists Of A Shadow</span>
+                <span class="catalog__album-release">2014</span>
+                <a href="" class="catalog__listen">listen</a>
+                <a href="" class="catalog__buy">buy</a>
+              </li>
+              <li class="catalog__item">
+                <span class="catalog__album-title">Heroes Of The Sun</span>
+                <span class="catalog__album-release">2013</span>
+                <a href="" class="catalog__listen">listen</a>
+                <a href="" class="catalog__buy">buy</a>
+              </li>
+              <li class="catalog__item">
+                <span class="catalog__album-title">Picture Of The Past</span>
+                <span class="catalog__album-release">2013</span>
+                <a href="" class="catalog__listen">listen</a>
+                <a href="" class="catalog__buy">buy</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="player">
+            <div class="player__song-info">
+              <h2 class="player__title">Now plaing</h2>
+              <h3 class="player__current-album">Surprise Without Flaws</h3>
+              <div class="player__current-song">
+                <span class="player__current-number">01</span>
+                . Clouds In The Forest
+              </div>
+            </div>
+
+            <div class="player__controls">
+              <!-- TODO -->
+            </div>
+
+            <div class="player__album">
+              <h3 class="player__album-title">Surprise Without Flaws</h3>
+              <ul class="player__songs">
+                <li class="player__song">
+                  <a href="" class="player__song-link player__song-link--active">
+                    <span class="player__icon-play"></span>
+                    <span class="player__song-number">01.</span>
+                    <span class="player__song-title">Clouds In The Forest</span>
+                    <span class="player__song-dots">
+
+                    </span>
+                    <span class="player__song-duration">3:20</span>
+                  </a>
+                </li>
+                <li class="player__song">
+                  <a href="" class="player__song-link">
+                    <span class="player__icon-play"></span>
+                    <span class="player__song-number">02.</span>
+                    <span class="player__song-title">Rat In The River</span>
+                    <span class="player__song-dots"></span>
+                    <span class="player__song-duration">2:48</span>
+                  </a>
+                </li>
+                <li class="player__song">
+                  <a href="" class="player__song-link">
+                    <span class="player__icon-play"></span>
+                    <span class="player__song-number">03.</span>
+                    <span class="player__song-title">Giants And Companions</span>
+                    <span class="player__song-dots"></span>
+                    <span class="player__song-duration">2:27</span>
+                  </a>
+                </li>
+                <li class="player__song">
+                  <a href="" class="player__song-link">
+                    <span class="player__icon-play"></span>
+                    <span class="player__song-number">04.</span>
+                    <span class="player__song-title">Ashamed Of Light</span>
+                    <span class="player__song-dots"></span>
+                    <span class="player__song-duration">3:32</span>
+                  </a>
+                </li>
+                <li class="player__song">
+                  <a href="" class="player__song-link">
+                    <span class="player__icon-play"></span>
+                    <span class="player__song-number">05.</span>
+                    <span class="player__song-title">Doubting The Forest</span>
+                    <span class="player__song-dots"></span>
+                    <span class="player__song-duration">2:40</span>
+                  </a>
+                </li>
+                <li class="player__song">
+                  <a href="" class="player__song-link">
+                    <span class="player__icon-play"></span>
+                    <span class="player__song-number">06.</span>
+                    <span class="player__song-title">Criminals Of The Lake</span>
+                    <span class="player__song-dots"></span>
+                    <span class="player__song-duration">2:55</span>
+                  </a>
+                </li>
+                <li class="player__song">
+                  <a href="" class="player__song-link">
+                    <span class="player__icon-play"></span>
+                    <span class="player__song-number">07.</span>
+                    <span class="player__song-title">Curse Of Eternity</span>
+                    <span class="player__song-dots"></span>
+                    <span class="player__song-duration">1:33</span>
+                  </a>
+                </li>
+                <li class="player__song">
+                  <a href="" class="player__song-link">
+                    <span class="player__icon-play"></span>
+                    <span class="player__song-number">08.</span>
+                    <span class="player__song-title">Fog In My Town</span>
+                    <span class="player__song-dots"></span>
+                    <span class="player__song-duration">1:33</span>
+                  </a>
+                </li>
+                <li class="player__song">
+                  <a href="" class="player__song-link">
+                    <span class="player__icon-play"></span>
+                    <span class="player__song-number">09.</span>
+                    <span class="player__song-title">Serpent In The Mountains</span>
+                    <span class="player__song-dots"></span>
+                    <span class="player__song-duration">3:24</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="tours" id="tours">
+        <div class="container">
+          <h2 class="tours__title">Tour dates</h2>
+
+          <div class="schedule">
+            <a class="schedule__prev" a="#"></a>
+            <a class="schedule__next" a="#"></a>
+            <div class="schedule__inner">
+              <ul class="schedule__list">
+                <li class="schedule__item">
+                  <a href="" class="schedule__link">
+                    <div>ALEXANDRA PALACE, 10/03/2015</div>
+                    <div>LONDON, UNITED KINGDOM</div>
+                  </a>
+                </li>
+                <li class="schedule__item">
+                  <a href="" class="schedule__link">
+                    <div>FIELD DAY, 14/04/2015</div>
+                    <div>SYDNEY, AUSTRALIA</div>
+                  </a>
+                </li>
+                <li class="schedule__item">
+                  <a href="" class="schedule__link">
+                    <div>SYDNEY OPERA HOUSE, 18/04/2015</div>
+                    <div>SYDNEY, AUSTRALIA</div>
+                  </a>
+                </li>
+                <li class="schedule__item">
+                  <a href="" class="schedule__link">
+                    <div>HEINEKEN MUSIC HALL, 02/05/2015</div>
+                    <div>AMSTERDAM, HOLLAND</div>
+                  </a>
+                </li>
+                <li class="schedule__item">
+                  <a href="" class="schedule__link">
+                    <div>FOREST NATIONAL, 07/06/2015</div>
+                    <div>BRUSSELS, BELGIUM</div>
+                  </a>
+                </li>
+                <li class="schedule__item">
+                  <a href="" class="schedule__link">
+                    <div>SPORTHALLE, 07/10/2015</div>
+                    <div>HAMBURG, GERMANY</div>
+                  </a>
+                </li>
+                <li class="schedule__item">
+                  <a href="" class="schedule__link">
+                    <div>TAP 1, today</div>
+                    <div>COPENHAGEN, DENMARK</div>
+                  </a>
+                </li>
+                <li class="schedule__item">
+                  <a href="" class="schedule__link">
+                    <div>COLUMBIANHALLE, 16/12/2015</div>
+                    <div>BERLIN, GERMANY</div>
+                  </a>
+                </li>
+                <li class="schedule__item">
+                  <a href="" class="schedule__link">
+                    <div>Torwar, 19/12/2015</div>
+                    <div>WARSAW, POLAND</div>
+                  </a>
+                </li>
+                <li class="schedule__item">
+                  <a href="" class="schedule__link">
+                    <div>MEDIOLANUM FORUM, 16/01/2016</div>
+                    <div>MILAN, ITALY</div>
+                  </a>
+                </li>
+                <li class="schedule__item">
+                  <a href="" class="schedule__link">
+                    <div>ZENITH, 23/02/2016</div>
+                    <div>PARIS, FRANCE</div>
+                  </a>
+                </li>
+                <li class="schedule__item">
+                  <a href="" class="schedule__link">
+                    <div>ALEXANDRA PALACE, 14/03/2016</div>
+                    <div>LONDON, UK</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="orders">
+            <ul class="orders__list">
+              <li class="orders__item">
+                <div class="orders__time">
+                  <span class="orders__day">16</span>
+                  <span class="orders__month-year">dec <br> 2015</span>
+                </div>
+                <span class="orders__place">columbianhalle // germany, berlin</span>
+                <a href="" class="orders__buy">by ticket</a>
+              </li>
+              <li class="orders__item">
+                <div class="orders__time">
+                  <span class="orders__day">19</span>
+                  <span class="orders__month-year">dec <br> 2015</span>
+                </div>
+                <span class="orders__place">torwar // poland, warsaw</span>
+                <a href="" class="orders__buy">by ticket</a>
+              </li>
+              <li class="orders__item">
+                <div class="orders__time">
+                  <span class="orders__day">16</span>
+                  <span class="orders__month-year">jan <br> 2016</span>
+                </div>
+                <span class="orders__place">mediolanum forum // italy, milan</span>
+                <a href="" class="orders__buy">by ticket</a>
+              </li>
+              <li class="orders__item">
+                <div class="orders__time">
+                  <span class="orders__day">23</span>
+                  <span class="orders__month-year">feb <br> 2016</span>
+                </div>
+                <span class="orders__place">zenith // france, paris</span>
+                <a href="" class="orders__buy">by ticket</a>
+              </li>
+              <li class="orders__item">
+                <div class="orders__time">
+                  <span class="orders__day">14</span>
+                  <span class="orders__month-year">mar <br> 2016</span>
+                </div>
+                <span class="orders__place">alexandra palace // UK, london</span>
+                <a href="" class="orders__buy">by ticket</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="contacts">
+      <div class="container">
+        <div class="contacts__content">
+          <div class="contacts__content-wrapper">
+            <h2 class="contacts__title">contact</h2>
+            <a href="tel:+482025550114" class="contacts__phone">+48 202 - 555 - 0114</a>
+            <form action="#" class="contacts__subscribe" method="POST">
+              <button class="contacts__email-submit" type="submit">subscribe</button>
+              <div class="contacts__email-wrapper">
+                <input type="email" class="contacts__email" placeholder="enter your email" required>
+              </div>
+              <div class="contacts__socials">
+                <div class="contacts__yt"></div>
+                <div class="contacts__fb"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <footer class="contacts__footer">
+          <div class="contacts__copyright">Copyright 2015 © by The Band</div>
+          <div class="menu contacts__menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#home" class="menu__link">home</a>
+              </li>
+              <li class="menu__item">
+                <a href="#about" class="menu__link">about</a>
+              </li>
+              <li class="menu__item">
+                <a href="#music" class="menu__link">music</a>
+              </li>
+              <li class="menu__item">
+                <a href="#tours" class="menu__link">tours</a>
+              </li>
+              <li class="menu__item">
+                <a href="#contacts" class="menu__link">contacts</a>
+              </li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+
+    </footer>
     <script src="js/script.js"></script>
   </body>
 </html>
