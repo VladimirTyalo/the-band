@@ -13,10 +13,10 @@
   &__title {
     float: right;
     min-height: 550px;
-    width: 430px;
+    width: 35%;
     padding-top: 242px;
     margin-top: 0;
-    margin-right: 60px;
+    margin-right: 1%;
     margin-bottom: 39px;
     background: url("./../img/words.png");
     background-position: top 63px right 6px;
@@ -38,5 +38,57 @@
     }
   }
 }
+
+
+@media (max-width: 1440px) {
+  .header {
+
+    background-size: cover;
+
+
+    &__title {
+      @include font(80px, 80px);
+      margin-right: 0.7%;
+      width: 40%;
+      min-height: 400px;
+    }
+
+  }
+}
+@media (max-width: 1010px) {
+  .header {
+
+
+    &__title {
+      @include font(60px, 60px);
+      width: 50%;
+      min-height: 300px;
+      text-align: right;
+    }
+
+  }
+}
+
+
+@media (max-width: 650px) {
+  .header {
+
+    background-size: cover;
+
+
+    &__title {
+      @include font(40px, 40px);
+      width: 100%;
+      min-height: 300px;
+
+      span {
+       color: $color-ebb-1;
+      }
+    }
+
+  }
+}
+
+
 
 

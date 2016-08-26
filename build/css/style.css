@@ -777,10 +777,10 @@ body {
   .header__title {
     float: right;
     min-height: 550px;
-    width: 430px;
+    width: 35%;
     padding-top: 242px;
     margin-top: 0;
-    margin-right: 60px;
+    margin-right: 1%;
     margin-bottom: 39px;
     background: url("./../img/words.png");
     background-position: top 63px right 6px;
@@ -1149,3 +1149,43 @@ body {
   .tours__title {
     text-align: center;
     margin-bottom: 25px; }
+  @media (max-width: 1440px) {
+  .header {
+    background-size: cover; }
+  .header__title {
+    font-size: 80px;
+    font-size: 5rem;
+    line-height: 80px;
+    line-height: 5rem;
+    margin-right: 0.7%;
+    width: 40%;
+    min-height: 400px; } }
+  @media (max-width: 1010px) {
+  .header__title {
+    font-size: 60px;
+    font-size: 3.75rem;
+    line-height: 60px;
+    line-height: 3.75rem;
+    width: 50%;
+    min-height: 300px;
+    text-align: right; } }
+  @media (max-width: 650px) {
+  .header {
+    background-size: cover; }
+  .header__title {
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 40px;
+    line-height: 2.5rem;
+    width: 100%;
+    min-height: 300px; }
+  .header__title span {
+    color: #e4dddb; } }
+  @media (max-width: 1270px) {
+  .menu__link {
+    color: #e4dddb; } }
+  @media (max-width: 630px) {
+  .menu__item {
+    display: block; }
+  .menu__link {
+    padding-left: 0; } }

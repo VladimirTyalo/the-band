@@ -51,3 +51,27 @@
     }
   }
 }
+
+@media (max-width: 1270px) {
+  .menu {
+
+
+    &__link {
+      color: $color-ebb-1;
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .menu {
+
+
+    &__item {
+      display: block;
+    }
+
+    &__link {
+      padding-left: 0;
+    }
+  }
+}
