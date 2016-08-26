@@ -517,7 +517,8 @@ body {
       opacity: 1; }
     .about__member span {
       display: table-cell;
-      padding: 10px 15px 10px 15px; }
+      padding: 10px 15px 10px 15px;
+      white-space: nowrap; }
     .about__member span:first-child {
       position: relative;
       text-align: right; }
@@ -1149,6 +1150,93 @@ body {
   .tours__title {
     text-align: center;
     margin-bottom: 25px; }
+  @media (max-width: 1400px) {
+  .about__slider {
+    padding-top: 30px; }
+  .about__title {
+    margin: 10px; }
+  .about__members {
+    top: 100px;
+    right: 10%; }
+  .about__person {
+    vertical-align: top; }
+  .about__full-name {
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-size: 70px;
+    font-size: 4.375rem;
+    line-height: 70px;
+    line-height: 4.375rem; }
+  .about__text {
+    width: 90%;
+    margin: 0 auto;
+    padding-right: 0;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 36px;
+    line-height: 2.25rem; }
+  .about__prev, .about__next {
+    top: 40%;
+    width: 30px;
+    height: 50px;
+    border: none;
+    backgound-size: 33px 59px; } }
+  @media (max-width: 1050px) {
+  .about__person {
+    display: block; }
+  .about__members {
+    right: 3%; }
+  .about__full-name {
+    font-size: 50px;
+    font-size: 3.125rem;
+    line-height: 50px;
+    line-height: 3.125rem;
+    margin-bottom: 10px; }
+  .about__content {
+    padding-top: 20px;
+    width: 100%; }
+  .about__text {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 22px;
+    line-height: 1.375rem; }
+  .about__title {
+    font-size: 28px;
+    font-size: 1.75rem;
+    line-height: 40px;
+    line-height: 2.5rem;
+    margin-top: 5px;
+    padding-right: 0; } }
+  @media (max-width: 630px) {
+  .about__full-name {
+    font-size: 30px;
+    font-size: 1.875rem;
+    line-height: 50px;
+    line-height: 3.125rem;
+    text-align: center;
+    left: auto;
+    right: 1%; }
+  .about__person {
+    margin-top: 300px;
+    width: 100%; }
+  .about__photo {
+    display: inline-block;
+    width: 50%; }
+  .about__members {
+    right: auto;
+    left: 50%;
+    -webkit-transform: rotate(-90deg) translateY(-70%);
+    -ms-transform: rotate(-90deg) translateY(-70%);
+    transform: rotate(-90deg) translateY(-70%); }
+  .about__memeber span {
+    padding: 5px 10px 5px 10px; }
+  .menu__item {
+    display: block; }
+  .menu__link {
+    padding-left: 0; } }
   @media (max-width: 1440px) {
   .header {
     background-size: cover; }
@@ -1184,8 +1272,3 @@ body {
   @media (max-width: 1270px) {
   .menu__link {
     color: #e4dddb; } }
-  @media (max-width: 630px) {
-  .menu__item {
-    display: block; }
-  .menu__link {
-    padding-left: 0; } }

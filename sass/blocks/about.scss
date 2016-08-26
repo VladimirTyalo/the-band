@@ -50,7 +50,6 @@
     text-transform: uppercase;
     font-family: $family-lora;
     opacity: 0.3;
-
     font-width: bold;
     @include font(13px, 22px);
 
@@ -61,6 +60,7 @@
     span {
       display: table-cell;
       padding: 10px 15px 10px 15px;
+      white-space: nowrap;
     }
 
     span:first-child {
@@ -86,7 +86,6 @@
   &__person {
     position: relative;
     width: 50%;
-
     @include block-align("inline-block", "bottom");
   }
 
@@ -97,7 +96,6 @@
     text-align: center;
     text-transform: uppercase;
     font-family: $family-oswaldbold;
-
     @include font(100px, 110px);
 
     span:first-child {
@@ -114,7 +112,6 @@
     width: 50%;
     padding-top: 290px;
     padding-bottom: 20px;
-
     @include block-align("inline-block", "top");
   }
 
@@ -124,7 +121,6 @@
     padding-left: 0;
     padding-right: 90px;
     font-family: $family-oswaldbold;
-
     @include font(36px, 78px);
   }
 
@@ -137,3 +133,113 @@
   }
 
 }
+
+@media (max-width: 1400px) {
+  .about {
+    &__slider {
+      padding-top: 30px;
+    }
+
+    &__title {
+      margin: 10px;
+    }
+    &__members {
+      top: 100px;
+      right: 10%;
+    }
+
+    &__person {
+      vertical-align: top;
+    }
+
+    &__full-name {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      @include font(70px, 70px);
+    }
+
+    &__text {
+      width: 90%;
+      margin: 0 auto;
+      padding-right: 0;
+      @include font(18px, 36px);
+    }
+
+    &__prev,
+    &__next {
+      top: 40%;
+      width: 30px;
+      height: 50px;
+      border: none;
+      backgound-size: 33px 59px;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .about {
+    &__person {
+      display: block;
+    }
+
+    &__members {
+      right: 3%;
+    }
+    &__full-name {
+      @include font(50px, 50px);
+      margin-bottom: 10px;
+    }
+
+    &__content {
+      padding-top: 20px;
+      width: 100%;
+    }
+
+    &__text {
+      @include font(16px, 22px);
+    }
+
+    &__title {
+      @include font(28px, 40px);
+      margin-top: 5px;
+      padding-right: 0;
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .about {
+
+    &__full-name {
+      @include font(30px, 50px);
+      text-align: center;
+      left: auto;
+      right: 1%;
+    }
+
+    &__person {
+      margin-top: 300px;
+      width: 100%;
+    }
+
+
+    &__photo {
+      display: inline-block;
+      width: 50%;
+    }
+
+    &__members {
+      right: auto;
+      left: 50%;
+      transform: rotate(-90deg) translateY(-70%);
+    }
+
+    &__memeber {
+      span {
+        padding: 5px 10px 5px 10px;
+      }
+    }
+  }
+}
+
