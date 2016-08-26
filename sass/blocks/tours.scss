@@ -3,10 +3,12 @@
   background: $color-ebb-2;
   .container {
     position: relative;
-    min-height: 965px;
+    min-height: 934px;
+    padding-top: 26px;
   }
 
   &__title {
     text-align: center;
+    margin-bottom: 25px;
   }
 }

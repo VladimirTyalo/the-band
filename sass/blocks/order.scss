@@ -1,8 +1,9 @@
 .orders {
   overflow-y: scroll;
-  width: 70%;
+  width: 83%;
   height: 280px;
-  margin: 460px auto 110px auto;
+  padding-left: 110px;
+  margin: 430px auto 110px;
 
   &__list {
     margin: 0;
@@ -51,7 +52,8 @@
   &__buy {
     display: block;
     width: 4em;
-    padding: 10px;
+    padding: 10px 25px;
+    margin-right: 14px;
     background: $color-sand-dune;
     color: $color-alabaster;
     text-align: center;

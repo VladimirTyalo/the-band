@@ -473,7 +473,7 @@ body {
   background: #f2efed; }
   .about__slider {
     position: relative;
-    padding-top: 200px; }
+    padding-top: 184px; }
   .about__photo {
     display: block;
     width: 100%;
@@ -495,7 +495,7 @@ body {
   .about__members {
     position: absolute;
     top: 262px;
-    right: 17.4%;
+    right: 17.5%;
     z-index: 20;
     display: table;
     list-style: none;
@@ -539,7 +539,7 @@ body {
     vertical-align: bottom; }
   .about__full-name {
     position: absolute;
-    bottom: 38px;
+    bottom: 20px;
     left: 50%;
     text-align: center;
     text-transform: uppercase;
@@ -573,7 +573,7 @@ body {
     font-family: lora, "Lucida Bright", Georgia, serif;
     width: 60%;
     margin: 0 auto;
-    padding-right: 88px;
+    padding-right: 50px;
     font-size: 18px;
     font-size: 1.125rem;
     line-height: 36px;
@@ -583,11 +583,19 @@ body {
   float: left;
   box-sizing: border-box;
   width: 50%;
-  padding-top: 100px;
-  padding-right: 50px; }
+  padding-top: 100px; }
+  .catalog__img-wrapper {
+    position: relative;
+    width: 826px;
+    min-height: 385px; }
   .catalog__album-photo {
     display: block;
-    margin-bottom: 70px; }
+    position: absolute;
+    width: 826px;
+    left: -120px; }
+  .catalog__title {
+    margin-top: 0;
+    margin-bottom: 24px; }
   .catalog__album-list {
     width: 100%;
     margin: 0;
@@ -595,7 +603,7 @@ body {
     list-style: none;
     font-size: 0; }
   .catalog__item {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     text-align: justify;
     display: block;
     vertical-align: top; }
@@ -612,10 +620,12 @@ body {
     line-height: 2.5rem; }
   .catalog__album-title {
     width: 35%;
-    padding-left: -30px; }
+    padding-left: -30px;
+    padding-right: 16px;
+    margin-top: 0; }
   .catalog__album-release {
     position: relative;
-    padding-right: 55px;
+    padding-right: 59px;
     padding-left: 55px; }
     .catalog__album-release::before {
       content: "";
@@ -628,7 +638,7 @@ body {
       background: #e4dddb; }
   .catalog__listen, .catalog__buy {
     width: 80px;
-    padding: 10px;
+    padding: 10px 0px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -638,7 +648,7 @@ body {
     line-height: 20px;
     line-height: 1.25rem; }
   .catalog__listen {
-    margin-right: 30px;
+    margin-right: 32px;
     background: #e4dddb;
     color: #826b60; }
   .catalog__buy {
@@ -660,57 +670,59 @@ body {
     font-size: 80px;
     font-size: 5rem;
     line-height: 100px;
-    line-height: 6.25rem; }
+    line-height: 6.25rem;
+    letter-spacing: 4px;
+    padding-right: 10px; }
   .contacts__phone {
     box-sizing: border-box;
-    white-space: nowrap;
-    display: inline-block;
-    vertical-align: top;
-    margin-bottom: 45px;
+    margin-bottom: 38px;
     padding: 0 65px 30px 65px;
+    background: url("../img/dotted-line-light.png") repeat-x;
+    background-position: bottom 0 left 0;
     color: #e4dddb;
     text-align: center;
     text-decoration: none;
-    font-weight: normal;
+    text-transform: uppercase;
+    white-space: nowrap;
     font-family: oswaldbold, Helvetica, Verdana, sans-serif;
+    display: inline-block;
+    vertical-align: top;
     font-size: 72px;
     font-size: 4.5rem;
     line-height: 78px;
     line-height: 4.875rem;
-    text-transform: uppercase;
-    background: url("../img/dotted-line-light.png") repeat-x;
-    background-position: bottom 0 left 0; }
+    letter-spacing: 4px; }
   .contacts__subscribe {
-    font-family: oswaldbold, Helvetica, Verdana, sans-serif;
-    font-size: 0; }
+    font-size: 0;
+    font-family: oswaldbold, Helvetica, Verdana, sans-serif; }
   .contacts__email-submit {
+    padding-right: 30px;
+    padding-left: 30px;
+    border: none;
+    background: #241c18;
+    color: #e4dddb;
+    text-transform: uppercase;
     font-size: 36px;
     font-size: 2.25rem;
     line-height: 55px;
     line-height: 3.4375rem;
-    background: #241c18;
-    text-transform: uppercase;
-    border: none;
-    color: #e4dddb;
-    padding-left: 30px;
-    padding-right: 30px;
     display: inline-block;
     vertical-align: bottom; }
   .contacts__email-wrapper {
+    border: 5px solid #241c18;
     display: inline-block;
-    vertical-align: bottom;
-    border: 5px solid #241c18; }
+    vertical-align: bottom; }
   .contacts__email {
+    display: block;
+    padding-left: 10px;
+    border: none;
+    background: none;
     font-size: 36px;
     font-size: 2.25rem;
     line-height: 46px;
-    line-height: 2.875rem;
-    display: block;
-    background: none;
-    border: none;
-    padding-left: 10px; }
+    line-height: 2.875rem; }
   .contacts__footer {
-    margin-top: 370px;
+    margin-top: 360px;
     padding-bottom: 70px; }
     .contacts__footer::after {
       content: "";
@@ -724,14 +736,29 @@ body {
     font-size: 18px;
     font-size: 1.125rem;
     line-height: 18px;
-    line-height: 1.125rem; }
+    line-height: 1.125rem;
+    text-transform: uppercase; }
   .contacts__menu {
-    margin-top: 0 !important;
     float: right;
+    margin-top: 0 !important;
     white-space: nowrap; }
     .contacts__menu a {
-      color: #e4dddb;
-      padding-bottom: 0; }
+      padding-bottom: 0;
+      color: #e4dddb; }
+  .contacts__socials {
+    display: inline-block;
+    vertical-align: bottom; }
+  .contacts__yt, .contacts__fb {
+    width: 80px;
+    height: 60px;
+    display: inline-block;
+    vertical-align: bottom; }
+  .contacts__yt {
+    background: url("../img/icons/icon-youtube.svg");
+    background-position: 0 0;
+    background-size: 100% 100%; }
+  .contacts__fb {
+    background: url("../img/icons/icon-fb.svg") no-repeat; }
 
 .header {
   width: 100%;
@@ -753,7 +780,7 @@ body {
     padding-top: 242px;
     margin-top: 0;
     margin-right: 60px;
-    margin-bottom: 45px;
+    margin-bottom: 39px;
     background: url("./../img/words.png");
     background-position: top 63px right 6px;
     background-repeat: no-repeat;
@@ -772,40 +799,47 @@ body {
 .menu {
   margin-top: 44px; }
   .menu__list {
-    padding: 0;
     margin: 0;
+    padding: 0;
     list-style: none; }
   .menu__item {
     display: inline-block; }
   .menu__link {
     position: relative;
     display: block;
+    overflow: hidden;
     padding: 30px 14px;
     color: #241c18;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
+    font-family: lora, "Lucida Bright", Georgia, serif;
     font-size: 18px;
     font-size: 1.125rem;
     line-height: 24px;
-    line-height: 1.5rem;
-    font-family: lora, "Lucida Bright", Georgia, serif; }
+    line-height: 1.5rem; }
     .menu__link::before {
+      content: "";
       position: absolute;
       top: 2.15em;
       left: -0.15em;
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: #826b60;
-      content: ""; }
+      background: #826b60; }
+  .menu__equalizer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 84px;
+    height: 18px; }
   .menu__item:first-child .menu__link {
     padding-left: 0; }
     .menu__item:first-child .menu__link::before {
       display: none; }
 
 .music .container {
-  padding-bottom: 130px; }
+  padding-bottom: 100px; }
   .music .container::after {
     content: "";
     display: table;
@@ -813,9 +847,10 @@ body {
 
 .orders {
   overflow-y: scroll;
-  width: 70%;
+  width: 83%;
   height: 280px;
-  margin: 460px auto 110px auto; }
+  padding-left: 110px;
+  margin: 430px auto 110px; }
   .orders__list {
     margin: 0;
     padding: 0;
@@ -856,7 +891,8 @@ body {
   .orders__buy {
     display: block;
     width: 4em;
-    padding: 10px;
+    padding: 10px 25px;
+    margin-right: 14px;
     background: #826b60;
     color: #f8f8f8;
     text-align: center;
@@ -882,13 +918,16 @@ body {
   float: right;
   box-sizing: border-box;
   width: 50%;
-  padding-top: 100px;
-  padding-left: 100px; }
+  padding-top: 108px;
+  padding-left: 106px; }
   .player__song-info {
     margin-top: 0; }
   .player__title {
-    margin-top: 0; }
+    margin-top: 0;
+    margin-bottom: 0; }
   .player__current-album {
+    margin-top: 10px;
+    margin-bottom: 12px;
     font-family: oswaldlight, Helvetice, Verdana, sans-serif;
     font-size: 30px;
     font-size: 1.875rem;
@@ -896,7 +935,11 @@ body {
     line-height: 2.5rem; }
   .player__current-song {
     color: #826b60;
-    font-family: loraitalic, "Lucida Bright", Georgia, serif; }
+    font-family: loraitalic, "Lucida Bright", Georgia, serif;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 18px;
+    line-height: 1.125rem; }
   .player__current-number {
     font-family: loraitalic, "Lucida Bright", Georgia, serif; }
   .player__controls {
@@ -907,22 +950,29 @@ body {
     margin: 0;
     padding: 0;
     list-style: none; }
+  .player__album-title {
+    margin-top: 0;
+    margin-bottom: 23px; }
   .player__song-link {
     display: table;
     width: 100%;
     padding: 5px 0;
-    text-decoration: none; }
+    text-decoration: none;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 18px;
+    line-height: 1.125rem; }
     .player__song-link span {
       display: table-cell;
       color: #826b60;
       font-family: loraitalic, "Lucida Bright", Georgia, serif; }
   .player__icon-play {
     height: 20px;
-    padding-left: 30px;
+    padding-left: 33px;
     background: url("./../img/icons/icon-play.svg") no-repeat;
     opacity: 0.3; }
   .player__song-number {
-    width: 30px; }
+    padding-right: 3px; }
   .player__song-title {
     padding-right: 30px;
     white-space: nowrap; }
@@ -938,8 +988,8 @@ body {
 
 .schedule {
   position: absolute;
-  left: 15%;
-  right: 15%;
+  left: 21%;
+  right: 21%;
   overflow: hidden;
   max-height: 380px; }
   .schedule__inner {
@@ -947,12 +997,12 @@ body {
     vertical-align: top;
     text-align: right;
     position: relative;
-    top: 50px;
+    top: 95px;
     left: 50%;
     -webkit-transform: translate3d(-50%, -340px, 0) rotate(-90deg);
             transform: translate3d(-50%, -340px, 0) rotate(-90deg);
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 55px;
+    padding-bottom: 55px;
     border-right: 2px solid #e4dddb; }
   .schedule__prev {
     position: absolute;
@@ -972,16 +1022,15 @@ body {
       border: none;
       backgound-size: cover;
       padding: 0;
-      top: 50%;
+      top: 40%;
       left: 0; }
     .schedule__prev::after {
       content: "";
+      width: 100%;
+      border-bottom: 2px solid #e4dddb;
       position: absolute;
-      width: 70px;
-      height: 2px;
-      background: #e4dddb;
-      top: 56px;
-      left: -10px;
+      top: 24px;
+      left: 0;
       z-index: 30; }
   .schedule__next {
     position: absolute;
@@ -1002,23 +1051,22 @@ body {
       border: none;
       backgound-size: cover;
       padding: 0;
-      top: 50%;
-      right: 0; }
+      top: 40%;
+      right: 0px; }
     .schedule__next::after {
       content: "";
+      width: 100%;
+      border-bottom: 2px solid #e4dddb;
       position: absolute;
-      width: 70px;
-      height: 2px;
-      background: #e4dddb;
-      top: 56px;
-      left: -10px;
+      top: 24px;
+      left: 0;
       z-index: 30; }
   .schedule__list {
     margin: 0;
     padding: 0;
     list-style: none; }
   .schedule__item {
-    margin-bottom: 30px;
+    margin-bottom: 22px;
     margin-right: 22px;
     position: relative; }
     .schedule__item::before {
@@ -1048,6 +1096,8 @@ body {
   background: #f3f1f0; }
   .tours .container {
     position: relative;
-    min-height: 965px; }
+    min-height: 934px;
+    padding-top: 26px; }
   .tours__title {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 25px; }

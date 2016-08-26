@@ -1,7 +1,7 @@
 .schedule {
   position: absolute;
-  left: 15%;
-  right: 15%;
+  left: 21%;
+  right: 21%;
   overflow: hidden;
   max-height: 380px;
 
@@ -9,11 +9,11 @@
     @include block-align("inline-block", "top");
     text-align: right;
     position: relative;
-    top: 50px;
+    top: 95px;
     left: 50%;
     transform: translate3d(-50%, -340px, 0) rotate(-90deg);
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 55px;
+    padding-bottom: 55px;
     border-right: 2px solid $color-ebb-1;
   }
 
@@ -36,21 +36,20 @@
       border: none;
       backgound-size: cover;
       padding: 0;
-      top: 50%;
+      top: 40%;
       left: 0;
     }
 
+
     &::after {
       content: "";
+      width: 100%;
+      border-bottom: 2px solid $color-ebb-1;
       position: absolute;
-      width: 70px;
-      height: 2px;
-      background: $color-ebb-1;
-      top: 56px;
-      left: -10px;
+      top: 24px;
+      left: 0;
       z-index: 30;
     }
-
   }
 
   &__next {
@@ -73,18 +72,17 @@
       border: none;
       backgound-size: cover;
       padding: 0;
-      top: 50%;
-      right: 0;
+      top: 40%;
+      right: 0px;
     }
 
     &::after {
       content: "";
+      width: 100%;
+      border-bottom: 2px solid $color-ebb-1;
       position: absolute;
-      width: 70px;
-      height: 2px;
-      background: $color-ebb-1;
-      top: 56px;
-      left: -10px;
+      top: 24px;
+      left: 0;
       z-index: 30;
     }
 
@@ -97,7 +95,7 @@
   }
 
   &__item {
-    margin-bottom: 30px;
+    margin-bottom: 22px;
     margin-right: 22px;
     position: relative;
 

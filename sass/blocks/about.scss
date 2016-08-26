@@ -4,7 +4,7 @@
 
   &__slider {
     position: relative;
-    padding-top: 200px;
+    padding-top: 184px;
   }
 
   &__photo {
@@ -37,7 +37,7 @@
   &__members {
     position: absolute;
     top: 262px;
-    right: 17.4%;
+    right: 17.5%;
     z-index: 20;
     display: table;
     list-style: none;
@@ -92,7 +92,7 @@
 
   &__full-name {
     position: absolute;
-    bottom: 38px;
+    bottom: 20px;
     left: 50%;
     text-align: center;
     text-transform: uppercase;
@@ -132,7 +132,7 @@
     font-family: $family-lora;
     width: 60%;
     margin: 0 auto;
-    padding-right: 88px;
+    padding-right: 50px;
     @include font(18px, 36px);
   }
 

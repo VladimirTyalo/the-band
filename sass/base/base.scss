@@ -17,32 +17,28 @@ img {
 
 @font-face {
   font-family: "oswaldlight";
-  src: url("./../fonts/oswald-light-webfont.woff2") format("woff2"),
-  url("./../fonts/oswald-light-webfont.woff") format("woff");
+  src: url("./../fonts/oswald-light-webfont.woff2") format("woff2"),url("./../fonts/oswald-light-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "oswaldregular";
-  src: url("./../fonts/oswald-regular-webfont.woff2") format("woff2"),
-  url("./../fonts/oswald-regular-webfont.woff") format("woff");
+  src: url("./../fonts/oswald-regular-webfont.woff2") format("woff2"),url("./../fonts/oswald-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "loraitalic";
-  src: url("./../fonts/lora-italic-webfont.woff2") format("woff2"),
-  url("./../fonts/lora-italic-webfont.woff") format("woff");
+  src: url("./../fonts/lora-italic-webfont.woff2") format("woff2"),url("./../fonts/lora-italic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "lorabold";
-  src: url("./../fonts/lora-bold-webfont.woff2") format("woff2"),
-  url("./../fonts/lora-bold-webfont.woff") format("woff");
+  src: url("./../fonts/lora-bold-webfont.woff2") format("woff2"),url("./../fonts/lora-bold-webfont.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 

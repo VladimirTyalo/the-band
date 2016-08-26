@@ -3,13 +3,24 @@
   box-sizing: border-box;
   width: 50%;
   padding-top: 100px;
-  padding-right: 50px;
+
+  &__img-wrapper {
+    position: relative;
+    width: 826px;
+    min-height: 385px;
+  }
 
   &__album-photo {
     display: block;
-    margin-bottom: 70px;
+    position: absolute;
+    width: 826px;
+    left: -120px;
   }
 
+  &__title {
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
 
   &__album-list {
     width: 100%;
@@ -20,7 +31,7 @@
   }
 
   &__item {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     text-align: justify;
     @include block-align("block");
   }
@@ -43,11 +54,13 @@
   &__album-title {
     width: 35%;
     padding-left: -30px;
+    padding-right: 16px;
+    margin-top: 0;
   }
 
   &__album-release {
     position: relative;
-    padding-right: 55px;
+    padding-right: 59px;
     padding-left: 55px;
 
     &::before {
@@ -65,7 +78,7 @@
   &__listen,
   &__buy {
     width: 80px;
-    padding: 10px;
+    padding: 10px 0px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -74,7 +87,7 @@
   }
 
   &__listen {
-    margin-right: 30px;
+    margin-right: 32px;
     background: $color-ebb-1;
     color: $color-sand-dune;
   }

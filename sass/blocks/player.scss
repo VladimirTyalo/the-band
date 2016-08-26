@@ -2,25 +2,28 @@
   float: right;
   box-sizing: border-box;
   width: 50%;
-  padding-top: 100px;
-  padding-left: 100px;
+  padding-top: 108px;
+  padding-left: 106px;
   &__song-info {
     margin-top: 0;
   }
 
   &__title {
     margin-top: 0;
+    margin-bottom: 0;
   }
 
   &__current-album {
+    margin-top: 10px;
+    margin-bottom: 12px;
     font-family: $family-oswaldlight;
-
     @include font(30px, 40px);
   }
 
   &__current-song {
     color: $color-sand-dune;
     font-family: $family-loraitalic;
+    @include font(18px, 18px);
   }
 
   &__current-number {
@@ -39,11 +42,17 @@
     list-style: none;
   }
 
+  &__album-title {
+    margin-top: 0;
+    margin-bottom: 23px;
+  }
+
   &__song-link {
     display: table;
     width: 100%;
     padding: 5px 0;
     text-decoration: none;
+    @include font(18px, 18px);
 
     span {
       display: table-cell;
@@ -54,13 +63,13 @@
 
   &__icon-play {
     height: 20px;
-    padding-left: 30px;
+    padding-left: 33px;
     background: url("./../img/icons/icon-play.svg") no-repeat;
     opacity: 0.3;
   }
 
   &__song-number {
-    width: 30px;
+    padding-right: 3px;
   }
 
   &__song-title {
@@ -83,5 +92,4 @@
     opacity: 1;
   }
 ;
-
 }
