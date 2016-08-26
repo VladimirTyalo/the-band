@@ -749,12 +749,13 @@ body {
     display: inline-block;
     vertical-align: bottom; }
   .contacts__yt, .contacts__fb {
-    width: 80px;
-    height: 60px;
+    width: 59px;
+    height: 61px;
     display: inline-block;
-    vertical-align: bottom; }
+    vertical-align: bottom;
+    z-index: 100; }
   .contacts__yt {
-    background: url("../img/icons/icon-youtube.svg");
+    background: url("../img/icons/icon-youtube.svg") no-repeat;
     background-position: 0 0;
     background-size: 100% 100%; }
   .contacts__fb {
@@ -945,7 +946,7 @@ body {
   .player__controls {
     min-height: 240px;
     width: 100%;
-    background: lightgray; }
+    position: relative; }
   .player__songs {
     margin: 0;
     padding: 0;
@@ -985,6 +986,53 @@ body {
     text-align: right; }
   .player__song-link--active .player__icon-play {
     opacity: 1; }
+  .player__rewind {
+    position: absolute;
+    top: 40px;
+    left: 150px;
+    width: 80px;
+    height: 50px;
+    background: url("../img/icons/icon-rewind.svg") no-repeat; }
+  .player__pause {
+    position: absolute;
+    top: 35px;
+    left: 305px;
+    width: 80px;
+    height: 50px;
+    background: url("../img/icons/icon-pause.svg") no-repeat; }
+  .player__forward {
+    position: absolute;
+    top: 40px;
+    left: 425px;
+    width: 80px;
+    height: 50px;
+    background: url("../img/icons/icon-forward.svg") no-repeat; }
+  .player__progress-future {
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    width: 100%;
+    height: 7px;
+    background: #ab9c95;
+    border-radius: 4px; }
+  .player__progress-past {
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    width: 50%;
+    height: 7px;
+    background: #e4dddb;
+    z-index: 10;
+    border-radius: 4px; }
+  .player__progress-current {
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    top: 106px;
+    left: calc(50% - 17px);
+    background: #ab9c95;
+    z-index: 20; }
 
 .schedule {
   position: absolute;

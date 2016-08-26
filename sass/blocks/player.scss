@@ -33,7 +33,7 @@
   &__controls {
     min-height: 240px;
     width: 100%;
-    background: lightgray;
+    position: relative;
   }
 
   &__songs {
@@ -91,5 +91,64 @@
   &__song-link--active .player__icon-play {
     opacity: 1;
   }
-;
+
+
+  &__rewind {
+    position: absolute;
+    top: 40px;
+    left: 150px;
+    width: 80px;
+    height: 50px;
+    background: url("../img/icons/icon-rewind.svg") no-repeat;
+  }
+
+  &__pause {
+    position: absolute;
+    top: 35px;
+    left: 305px;
+    width: 80px;
+    height: 50px;
+    background: url("../img/icons/icon-pause.svg") no-repeat;
+  }
+
+  &__forward {
+    position: absolute;
+    top: 40px;
+    left: 425px;
+    width: 80px;
+    height: 50px;
+    background: url("../img/icons/icon-forward.svg") no-repeat;
+  }
+
+  &__progress-future {
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    width: 100%;
+    height: 7px;
+    background: $color-bronco;
+    border-radius: 4px;
+  }
+
+  &__progress-past {
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    width: 50%;
+    height: 7px;
+    background: $color-ebb-1;
+    z-index: 10;
+    border-radius: 4px;
+  }
+
+  &__progress-current {
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    top: 106px;
+    left: calc(50% - 17px);
+    background: $color-bronco;
+    z-index: 20;
+  }
 }
