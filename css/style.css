@@ -599,7 +599,8 @@ body {
     font-size: 18px;
     font-size: 1.125rem;
     line-height: 36px;
-    line-height: 2.25rem; }
+    line-height: 2.25rem;
+    word-break: break-all; }
 
 .catalog {
   float: left;
