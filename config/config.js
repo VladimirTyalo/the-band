@@ -10,6 +10,7 @@ module.exports = {
   ],
   IMG_FILES: ["img/**"],
   FONT_FILES: ["fonts/**/*.{woff,woff2}"],
+  MEDIA_FILES:["media/*"],
 
   JS_HINT_OPTIONS: {
     globals: {
