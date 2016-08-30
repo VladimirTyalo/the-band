@@ -3,7 +3,7 @@
   box-sizing: border-box;
   width: 50%;
   padding-top: 108px;
-  padding-left: 106px;
+  padding-left: 6.5%;
   &__song-info {
     margin-top: 0;
   }
@@ -31,9 +31,9 @@
   }
 
   &__controls {
+    position: relative;
     min-height: 240px;
     width: 100%;
-    position: relative;
   }
 
   &__songs {
@@ -59,6 +59,14 @@
       color: $color-sand-dune;
       font-family: $family-loraitalic;
     }
+
+    &:hover span{
+      color: #c6caaf;
+    }
+  }
+
+  &__song-src {
+    margin-left: -12px;
   }
 
   &__icon-play {
@@ -66,6 +74,11 @@
     padding-left: 33px;
     background: url("./../img/icons/icon-play.svg") no-repeat;
     opacity: 0.3;
+
+    &--no-js {
+      padding: 0;
+    }
+
   }
 
   &__song-number {
@@ -92,32 +105,46 @@
     opacity: 1;
   }
 
-
   &__rewind {
     position: absolute;
     top: 40px;
-    left: 150px;
+    left: 22%;
     width: 80px;
     height: 50px;
     background: url("../img/icons/icon-rewind.svg") no-repeat;
+    cursor: pointer;
   }
 
   &__pause {
     position: absolute;
     top: 35px;
-    left: 305px;
+    left: 46%;
     width: 80px;
     height: 50px;
     background: url("../img/icons/icon-pause.svg") no-repeat;
+    cursor: pointer;
+  }
+
+  &__play {
+    position: absolute;
+    top: 35px;
+    left: 43%;
+    width: 80px;
+    height: 50px;
+    background: url("../img/icons/icon-play.svg") no-repeat;
+    background-size: 80px 50px;
+    opacity: 0.3;
+    cursor: pointer;
   }
 
   &__forward {
     position: absolute;
     top: 40px;
-    left: 425px;
+    left: 64%;
     width: 80px;
     height: 50px;
     background: url("../img/icons/icon-forward.svg") no-repeat;
+    cursor: pointer;
   }
 
   &__progress-future {
@@ -126,29 +153,127 @@
     left: 0px;
     width: 100%;
     height: 7px;
-    background: $color-bronco;
     border-radius: 4px;
+    background: $color-bronco;
+    cursor: pointer;
   }
 
   &__progress-past {
     position: absolute;
     top: 120px;
     left: 0px;
+    z-index: 10;
     width: 50%;
     height: 7px;
-    background: $color-ebb-1;
-    z-index: 10;
     border-radius: 4px;
+    background: $color-ebb-1;
+    cursor: pointer;
+    //transition: all 0.1s;
   }
 
   &__progress-current {
     position: absolute;
+    top: 106px;
+    left: calc(50% - 17px);
+    z-index: 20;
     width: 33px;
     height: 33px;
     border-radius: 50%;
-    top: 106px;
-    left: calc(50% - 17px);
     background: $color-bronco;
-    z-index: 20;
+    cursor: pointer;
+    //transition: all 0.1s;
   }
+}
+
+@media (max-width: 1150px) {
+
+  .player {
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 0;
+
+    &__controls {
+      min-height: 160px;
+    }
+
+  }
+}
+
+@media (max-width: 550px) {
+  .player {
+
+    &__rewind {
+      left: 12%;
+      width: 40px;
+      height: 25px;
+      background-size: 40px 25px;
+    }
+
+    &__pause {
+      top: 40px;
+      left: 43%;
+      width: 40px;
+      height: 25px;
+      background-size: 40px 40px;
+    }
+
+    &__play {
+      top: 40px;
+      left: 45%;
+      width: 40px;
+      height: 30px;
+      background-size: 40px 30px;
+    }
+
+    &__forward {
+      position: absolute;
+      top: 40px;
+      left: 74%;
+      width: 40px;
+      height: 25px;
+      background-size: 40px 25px;
+    }
+
+    &__song-link {
+      table-layout: fixed;
+    }
+
+    &__icon-play {
+      width: 1px;
+    }
+
+    &__song-number {
+      width: 20px;
+    }
+
+    &__song-title {
+      width: 1px;
+    }
+
+    &__song-dots {
+      width: 1px;
+    }
+
+  }
+}
+
+@media (max-width: 400px) {
+  .player {
+
+    &__song {
+      margin-bottom: 10px;
+    }
+    &__song-title {
+      width: auto;
+      padding-right: 2px;
+      white-space: pre-wrap;
+    }
+
+    &__song-duration {
+      width: 35px;
+      padding-left: 0;
+    }
+
+  }
+
 }

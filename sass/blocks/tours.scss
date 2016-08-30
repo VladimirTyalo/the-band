@@ -1,5 +1,4 @@
 .tours {
-
   background: $color-ebb-2;
   .container {
     position: relative;
@@ -8,7 +7,15 @@
   }
 
   &__title {
-    text-align: center;
     margin-bottom: 25px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1250px) {
+  .tours {
+    &__title {
+      margin-top: 0;
+    }
   }
 }

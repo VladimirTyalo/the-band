@@ -121,3 +121,7 @@ body {
   /* IE 10+ */
   color: $color-almond-frost;
 }
+
+.visually-hidden {
+  @include visuallyhidden();
+}

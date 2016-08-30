@@ -6,15 +6,15 @@
 
   &__img-wrapper {
     position: relative;
-    width: 826px;
     min-height: 385px;
+    width: 826px;
   }
 
   &__album-photo {
-    display: block;
     position: absolute;
-    width: 826px;
     left: -120px;
+    display: block;
+    width: 826px;
   }
 
   &__title {
@@ -53,9 +53,9 @@
 
   &__album-title {
     width: 35%;
-    padding-left: -30px;
-    padding-right: 16px;
     margin-top: 0;
+    padding-right: 16px;
+    padding-left: -30px;
   }
 
   &__album-release {
@@ -90,11 +90,159 @@
     margin-right: 32px;
     background: $color-ebb-1;
     color: $color-sand-dune;
+
+    &:hover {
+      background: $color-sand-dune;
+      color: $color-ebb-1;
+    }
   }
 
   &__buy {
     background: $color-sand-dune;
     color: $color-alabaster;
+
+    &:hover {
+      background: $color-ebb-1;
+      color: $color-sand-dune;
+    }
   }
 
+}
+
+@media (max-width: 1790px) {
+  .catalog {
+
+    &__item {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    &__album-title {
+      white-space: nowrap;
+    }
+
+    &__album-photo {
+      position: static;
+      margin-left: -25%;
+    }
+
+    &__album-release {
+      padding-right: 30px;
+      width: 1px; // behave like flex-shrink;
+      border-right: 20px solid white;
+      &::before {
+        left: 20px;
+      }
+    }
+
+    &__album-title,
+    &__album-release,
+    &__listen,
+    &__buy {
+      display: table-cell;
+    }
+
+    &__listen {
+      border-right: 20px solid white;
+    }
+
+    &__album-releas {
+      padding-left: 3%;
+      padding-right: 3%;
+    }
+
+    &__album-tilte {
+      width: 260px;
+    }
+  }
+}
+
+@media (max-width: 1530px) {
+  .catalog {
+
+    &__img-wrapper {
+      min-height: 0;
+      width: 100%;
+    }
+
+    &__album-title,
+    &__album-release {
+      @include font(24px, 30px);
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .catalog {
+    &__album-title,
+    &__album-release {
+      @include font(20px, 24px);
+    }
+
+    &__listen,
+    &__buy {
+      @include font(16px, 18px);
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .catalog {
+    width: 100%;
+    padding-top: 20px;
+
+    &__album-photo {
+      margin-left: -10%;
+    }
+
+    &__album-title,
+    &__album-release {
+      @include font(20px, 30px);
+    }
+
+  }
+}
+
+@media(max-width: 510px) {
+  .catalog {
+
+    &__album-title {
+      border-left: 0;
+      white-space: pre-wrap;
+    }
+
+    &__album-release {
+      padding-left: 10px;
+      &::before {
+        display: none;
+      }
+    }
+
+    &__listen,
+    &__buy {
+      @include font(14px, 18px);
+      width: 40px;
+      padding: 5px 0;
+      border-top: 10px solid white;
+    }
+  }
+}
+
+@media(max-width: 440px) {
+  .catalog {
+    &__album-release {
+      padding: 0;
+      font-size: 0;
+    }
+
+    &__listen,
+    &__buy {
+      vertical-align: middle;
+    }
+
+    &__album-title {
+      white-space: pre-wrap;
+    }
+  }
 }

@@ -118,7 +118,8 @@ gulp.task("copy", function () {
   return gulp.src([].concat(config.FONT_FILES)
                     .concat(config.IMG_FILES)
                     .concat(config.JS_FILES)
-                    .concat(config.HTML_FILES), {
+                    .concat(config.HTML_FILES)
+                    .concat(config.MEDIA_FILES), {
                base: "."
              })
              .pipe(gulp.dest("build"));

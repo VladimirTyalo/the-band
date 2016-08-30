@@ -1,5 +1,7 @@
 .contacts {
   background: url("../img/instruments.jpg") no-repeat;
+  background-position: center 0;
+  background-size: auto;
 
   .container {
     min-height: 960px;
@@ -12,12 +14,12 @@
   &__title {
     margin-top: 160px;
     margin-bottom: 10px;
+    padding-right: 10px;
     text-align: center;
     text-transform: uppercase;
+    letter-spacing: 4px;
     font-family: $family-oswaldbold;
     @include font(80px, 100px);
-    letter-spacing: 4px;
-    padding-right: 10px;
   }
 
   &__phone {
@@ -31,10 +33,10 @@
     text-decoration: none;
     text-transform: uppercase;
     white-space: nowrap;
+    letter-spacing: 4px;
     font-family: $family-oswaldbold;
     @include block-align("inline-block", "top");
     @include font(72px, 78px);
-    letter-spacing: 4px;
   }
 
   &__subscribe {
@@ -51,6 +53,13 @@
     text-transform: uppercase;
     @include font(36px, 55px);
     @include block-align("inline-block", "bottom");
+    &:hover {
+      background: $color-bronco;
+    }
+
+    &:active {
+      background: $color-sand-dune;
+    }
   }
 
   &__email-wrapper {
@@ -60,7 +69,8 @@
 
   &__email {
     display: block;
-    padding-left: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
     border: none;
     background: none;
     @include font(36px, 46px);
@@ -75,9 +85,9 @@
     float: left;
     margin-top: 35px;
     color: $color-ebb-1;
+    text-transform: uppercase;
     font-family: $family-lorabold;
     @include font(18px, 18px);
-    text-transform: uppercase;
   }
 
   &__menu {
@@ -87,6 +97,21 @@
     a {
       padding-bottom: 0;
       color: $color-ebb-1;
+
+      &:hover {
+        color: $color-sand-dune;
+      }
+
+      &:active {
+        color: $color-zeus;
+      }
+    }
+  }
+
+  &__link {
+    &:hover::after {
+      bottom: -10px !important;
+      z-index: 10;
     }
   }
 
@@ -96,10 +121,20 @@
 
   &__yt,
   &__fb {
+    z-index: 100;
     width: 59px;
     height: 61px;
+    padding: 10px;
+    cursor: pointer;
     @include block-align("inline-block", "bottom");
-    z-index: 100;
+
+    &:hover {
+      transform: translateY(-10%) scale(1.1);
+    }
+
+    &:active {
+      transform: translateY(10%) scale(0.9);
+    }
   }
 
   &__yt {
@@ -110,5 +145,95 @@
 
   &__fb {
     background: url("../img/icons/icon-fb.svg") no-repeat;
+  }
+}
+
+@media (max-width: 1210px) {
+  .contacts {
+
+    .container {
+      position: relative;
+      min-height: 800px;
+    }
+
+    &__phone {
+      padding-right: 10px;
+      padding-left: 10px;
+      @include font(50px, 70px);
+    }
+
+    &__yt,
+    &__fb {
+      margin: 10px;
+      margin-bottom: 0;
+    }
+
+    &__footer {
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      min-height: 270px;
+      width: 90%;
+      margin-top: 0;
+    }
+
+    &__copyright {
+      position: absolute;
+      right: 10px;
+      bottom: 20px;
+      text-transform: capitalize;
+      font-weight: normal;
+      @include font(14px, 16px);
+    }
+
+    &__menu {
+      position: absolute;
+      bottom: 60px;
+      left: 10px;
+    }
+
+    &__link {
+      @include font(16px, 20px);
+    }
+
+    &__socials {
+      padding-top: 20px;
+    }
+
+  }
+}
+
+@media (max-width: 1010px) {
+  .contacts {
+
+    &__phone {
+      letter-spacing: 1px;
+      @include font(24px, 40px);
+    }
+
+    &__title {
+      margin-top: 50px;
+      @include font(30px, 40px);
+    }
+    &__email-submit {
+      width: 100%;
+      padding-right: 30px;
+    }
+
+    &__email-wrapper {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    &__email {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    &__link {
+      &::before {
+        display: none;
+      }
+    }
   }
 }

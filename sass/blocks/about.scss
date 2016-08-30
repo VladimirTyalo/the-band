@@ -22,6 +22,11 @@
     height: 100px;
     border: none;
     backgound-size: 33px 59px;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   &__prev {
@@ -50,8 +55,14 @@
     text-transform: uppercase;
     font-family: $family-lora;
     opacity: 0.3;
+    cursor: pointer;
     font-width: bold;
     @include font(13px, 22px);
+
+    &:hover {
+      transform: scale(1.1);
+      opacity: 0.7;
+    }
 
     &--active {
       opacity: 1;
@@ -81,6 +92,7 @@
 
   &__slide {
     font-size: 0;
+    display: inline-block;
   }
 
   &__person {
@@ -117,18 +129,18 @@
 
   &__title {
     margin-bottom: 30px;
-    text-align: center;
-    padding-left: 0;
     padding-right: 90px;
+    padding-left: 0;
+    text-align: center;
     font-family: $family-oswaldbold;
     @include font(36px, 78px);
   }
 
   &__text {
-    font-family: $family-lora;
     width: 60%;
     margin: 0 auto;
     padding-right: 50px;
+    font-family: $family-lora;
     @include font(18px, 36px);
   }
 
@@ -149,7 +161,7 @@
     }
 
     &__person {
-      vertical-align: top;
+      vertical-align: bottom;
     }
 
     &__full-name {
@@ -187,13 +199,13 @@
       right: 3%;
     }
     &__full-name {
-      @include font(50px, 50px);
       margin-bottom: 10px;
+      @include font(50px, 50px);
     }
 
     &__content {
-      padding-top: 20px;
       width: 100%;
+      padding-top: 20px;
     }
 
     &__text {
@@ -201,9 +213,16 @@
     }
 
     &__title {
-      @include font(28px, 40px);
       margin-top: 5px;
       padding-right: 0;
+      @include font(28px, 40px);
+    }
+
+    &__prev,
+    &__next {
+      width: 25px;
+      height: 40px;
+      backgound-size: 25px 40px;
     }
   }
 }
@@ -212,17 +231,16 @@
   .about {
 
     &__full-name {
-      @include font(30px, 50px);
-      text-align: center;
-      left: auto;
       right: 1%;
+      left: auto;
+      text-align: center;
+      @include font(30px, 50px);
     }
 
     &__person {
-      margin-top: 300px;
       width: 100%;
+      margin-top: 300px;
     }
-
 
     &__photo {
       display: inline-block;
@@ -239,6 +257,14 @@
       span {
         padding: 5px 10px 5px 10px;
       }
+    }
+
+    &__prev,
+    &__next {
+      top: 390px;
+      width: 15px;
+      height: 25px;
+      backgound-size: 15px 25px;
     }
   }
 }

@@ -1,9 +1,8 @@
 .header {
   width: 100%;
   background: #8f746a;
-  background-image: url("./../img/guitar.jpg"), radial-gradient(farthest-corner at 40% 50% , #958178 0%, #72574b 100%);
+  background-image: url("./../img/guitar.jpg"), radial-gradient(farthest-corner at 40% 50%, #958178 0%, #72574b 100%);
   background-position: center;
-  background-repeat: no-repeat;
 
   &__title-wrapper {
     width: 100%;
@@ -26,63 +25,70 @@
     font-size: 6.25em;
     font-family: $family-oswaldbold;
     line-height: 1.12;
+  }
 
-    span:first-child {
-      margin-bottom: 10px;
-      color: $color-ebb-1;
-    }
+  &__title-first-row {
+    margin-bottom: 10px;
+    color: $color-ebb-1;
+  }
 
-    span:nth-child(2) {
-      color: $color-zeus;
-      margin-left: -10px;
-    }
+  &__title-second-row {
+    color: $color-zeus;
+    margin-left: -10px;
   }
 }
 
-
 @media (max-width: 1440px) {
   .header {
-
     background-size: cover;
-
 
     &__title {
       @include font(80px, 80px);
       margin-right: 0.7%;
-      width: 40%;
+      width: 70%;
       min-height: 400px;
+      text-align: right;
+      padding-top: 200px;
     }
 
   }
 }
+
 @media (max-width: 1010px) {
   .header {
 
-
     &__title {
       @include font(60px, 60px);
-      width: 50%;
+      width: 70%;
       min-height: 300px;
-      text-align: right;
+      text-align: center;
+    }
+
+    &__title-first-row {
+      margin-bottom: 10px;
+      color: $color-zeus;
+    }
+
+    &__title-second-row {
+      color: $color-ebb-1;
+      margin-left: -10px;
     }
 
   }
 }
 
-
 @media (max-width: 650px) {
   .header {
-
     background-size: cover;
-
 
     &__title {
       @include font(40px, 40px);
-      width: 100%;
+      width: 70%;
       min-height: 300px;
+      margin-right: 0;
 
       span {
-       color: $color-ebb-1;
+        color: $color-ebb-1;
       }
     }
 
