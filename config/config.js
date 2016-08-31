@@ -6,11 +6,16 @@ module.exports = {
     "config/**/*.js",
     "js/**/*.js",
     "gulpfile.js",
-    "!js/vendor/**/*.js"
+    "!js/vendor/**/*.js",
+    "!js//browserified/**/*.js"
+  ],
+  JS_CLIENT_SIDE_FILES: [
+    "js/browserified/**/*.js"
   ],
   IMG_FILES: ["img/**"],
   FONT_FILES: ["fonts/**/*.{woff,woff2}"],
   MEDIA_FILES:["media/*"],
+  JS_TEST_FILES: ["test/**/*.js"],
 
   JS_HINT_OPTIONS: {
     globals: {

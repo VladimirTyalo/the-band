@@ -15,13 +15,19 @@ const gulp         = require("gulp"),
       imagemin     = require("gulp-imagemin"),
       del          = require("del"),
       runSequence  = require("run-sequence"),
-      //sourcemap    = require("gulp-sourcemaps"),
       config       = require("./config/config"),
       uglify       = require("gulp-uglify"),
       stylelint    = require("stylelint"),
       reporter     = require("postcss-reporter"),
       jshint       = require("gulp-jshint"),
-      htmlhint     = require("gulp-htmlhint");
+      htmlhint     = require("gulp-htmlhint"),
+      mocha        = require("gulp-mocha"),
+      browserify   = require("browserify"),
+      source       = require('vinyl-source-stream'),
+      es           = require('event-stream'),
+      flatten      = require("gulp-flatten"),
+      concat       = require("gulp-concat");
+
 
 gulp.task("style", function () {
   gulp.src(config.SASS_MAIN_FILE)
@@ -95,12 +101,7 @@ gulp.task("serve", function () {
                .pipe(server.reload({stream: true}));
   });
 
-  gulp.watch(config.JS_FILES, ["lint-js"]).on("change", function () {
-    return gulp.src(config.JS_FILES, {base: "."})
-               .pipe(plumber())
-               .pipe(gulp.dest("build"))
-               .pipe(server.reload({stream: true}));
-  });
+  gulp.watch(config.JS_FILES, ["lint-js", "browserify", "uglify"]);
 
 });
 
@@ -117,7 +118,6 @@ gulp.task("images", function () {
 gulp.task("copy", function () {
   return gulp.src([].concat(config.FONT_FILES)
                     .concat(config.IMG_FILES)
-                    .concat(config.JS_FILES)
                     .concat(config.HTML_FILES)
                     .concat(config.MEDIA_FILES), {
                base: "."
@@ -130,13 +130,49 @@ gulp.task("clean", function () {
 });
 
 gulp.task("build", function (fn) {
-  runSequence(
-    ["lint-styles", "lint-js", "lint-html"],
-    "clean",
-    "copy",
-    "style",
-    "images",
-    fn
-  );
+
+});
+
+
+gulp.task("test", function () {
+  process.stdout.write("testing server side javascript ...");
+  return gulp.src(config.JS_TEST_FILES, {read: false})
+             .pipe(plumber())
+             .pipe(mocha({reporter: "spec"}));
+});
+
+
+gulp.task("browserify", function () {
+
+  // we define our input files, which we want to have
+  // bundled:
+  var files = [
+    './js/player/player.js',
+    './js/script.js'
+  ];
+  // map them to our stream function
+  var tasks = files.map(function (entry) {
+    return browserify({entries: [entry]})
+      .bundle()
+      .pipe(source(entry))
+      // rename them to have "bundle as postfix"
+      .pipe(rename({
+        extname: '.bundle.js'
+      }))
+      .pipe(gulp.dest('js/browserified'));
+  });
+  // create a merged stream
+  return es.merge.apply(null, tasks);
+});
+
+gulp.task("uglify", function () {
+  return gulp.src(config.JS_CLIENT_SIDE_FILES)
+             .pipe(flatten())
+             .pipe(concat("script.js"))
+             .pipe(gulp.dest("build/js"))
+             .pipe(uglify())
+             .pipe(rename("script.min.js"))
+             .pipe(gulp.dest("build/js"))
+             .pipe(server.reload({stream: true}));
 });
 

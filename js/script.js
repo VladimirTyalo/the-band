@@ -4,7 +4,7 @@ var HIDDEN_CLASS = "visually-hidden";
 
 // --- SLIDER ---
 (function (window, document, $) {
-
+alert("Hie");
 
   // gather '.about' slider elements
   var $members   = $(".about__member");
