@@ -122,7 +122,7 @@
             self._btnDragPosition.style.left = currentX;
             self._progressPlayed.style.width = self._btnDragPosition.getBoundingClientRect().left - rect.left + "px";
           }
-
+          updateCurentTimeInfo();
           document.body.addEventListener("mouseup", function mouseUp(ev) {
             var scale = getScale();
             var left  = ev.clientX - rect.left;
@@ -134,7 +134,7 @@
 
 
             document.body.removeEventListener("mouseup", mouseUp);
-            updateCurentTimeInfo();
+
           });
         });
       });
