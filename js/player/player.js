@@ -32,8 +32,9 @@
             this._currentTime       = this._track.duration;
             this._track.currentTime = this._track.duration;
           } else {
-            this._currentTime       = time;
-            this._track.currentTime = time;
+            /*jshint bitwise: false*/
+            this._currentTime       = 0 | time; // drops part after decimal
+            this._track.currentTime = 0 | time;
           }
         },
         get: function () {
@@ -105,9 +106,9 @@
         set: function (number) {
           if (number < 0 || number >= this._trackList.length) return;
           this._track.pause();
-          this._state = state.PAUSED;
+          this._state      = state.PAUSED;
           this.currentTime = 0;
-          var playRate = this._playbackRate;
+          var playRate     = this._playbackRate;
 
           this._trackNumber = number;
           this._track       = this._trackList[number];
@@ -159,7 +160,7 @@
       },
       addSubscriber: {
         value: function (item) {
-          if(this._subscribers.indexOf(item) >= 0) return;
+          if (this._subscribers.indexOf(item) >= 0) return;
           this._subscribers.push(item);
         }
       },
