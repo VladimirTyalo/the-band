@@ -30,6 +30,16 @@
     font-family: $family-loraitalic;
   }
 
+  &__current-time,
+  &__current-duration {
+    width: 35px;
+    display: inline-block;
+  }
+
+
+  &__current-title {
+    margin-right: 20px;
+  }
   &__controls {
     position: relative;
     min-height: 240px;
@@ -46,6 +56,9 @@
     margin-top: 0;
     margin-bottom: 23px;
   }
+
+
+
 
   &__song-link {
     display: table;
@@ -79,6 +92,10 @@
       padding: 0;
     }
 
+    &--active {
+      opacity: 1;
+    }
+
   }
 
   &__song-number {
@@ -99,10 +116,6 @@
   &__song-duration {
     padding-left: 30px;
     text-align: right;
-  }
-
-  &__song-link--active .player__icon-play {
-    opacity: 1;
   }
 
   &__rewind {
@@ -132,7 +145,8 @@
     width: 80px;
     height: 50px;
     background: url("../img/icons/icon-play.svg") no-repeat;
-    background-size: 80px 50px;
+    background-size: 40px 50px;
+    background-position: 20px center;
     opacity: 0.3;
     cursor: pointer;
   }
@@ -183,6 +197,58 @@
     cursor: pointer;
     //transition: all 0.1s;
   }
+
+  &__speed-up,
+  &__speed-down {
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.5em;
+    top: 2px;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  &__options {
+    position: absolute;
+    width: 200px;
+    height: 3em;
+    background: url("../img/icons/icon-options.svg") no-repeat;
+    background-size: 2em 2em;
+    top: 150px;
+    left: 0px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &__options > * {
+    display: none;
+  }
+
+  &__options:hover {
+    border-radius: 1em;
+    background: $color-silver-rust;
+  }
+
+  &__options:hover > * {
+    @include block-align("inline-block", "bottom");
+  }
+
+  &__speed-text,
+  &__speed-val {
+    padding: 15px 0 10px 0;
+    font-family: $family-lora;
+    color: $color-zeus;
+  }
+
+  &__speed-up {
+    right: 15px;
+  }
+
+  &__speed-down {
+    left: 15px;
+  }
+
+
 }
 
 @media (max-width: 1150px) {

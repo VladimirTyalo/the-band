@@ -4,8 +4,8 @@ module.exports  = {
   STOP: "stop",
   PAUSE: "pause",
   PLAY: "play",
-  REWINED: "rewinded",
-  FOREWARD: "foreward",
+  REWIND: "rewind",
+  FORWARD: "forward",
   SPEED_UP: "speed-up",
   SPEED_DOWN: "speed-down"
 };

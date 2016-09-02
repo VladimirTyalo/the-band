@@ -738,7 +738,8 @@ body {
     line-height: 55px;
     line-height: 3.4375rem;
     display: inline-block;
-    vertical-align: bottom; }
+    vertical-align: bottom;
+    height: 58px; }
     .contacts__email-submit:hover {
       background: #ab9c95; }
     .contacts__email-submit:active {
@@ -1010,6 +1011,11 @@ body {
     line-height: 1.125rem; }
   .player__current-number {
     font-family: loraitalic, "Lucida Bright", Georgia, serif; }
+  .player__current-time, .player__current-duration {
+    width: 35px;
+    display: inline-block; }
+  .player__current-title {
+    margin-right: 20px; }
   .player__controls {
     position: relative;
     min-height: 240px;
@@ -1045,6 +1051,8 @@ body {
     opacity: 0.3; }
     .player__icon-play--no-js {
       padding: 0; }
+    .player__icon-play--active {
+      opacity: 1; }
   .player__song-number {
     padding-right: 3px; }
   .player__song-title {
@@ -1057,8 +1065,6 @@ body {
   .player__song-duration {
     padding-left: 30px;
     text-align: right; }
-  .player__song-link--active .player__icon-play {
-    opacity: 1; }
   .player__rewind {
     position: absolute;
     top: 40px;
@@ -1082,7 +1088,8 @@ body {
     width: 80px;
     height: 50px;
     background: url("../img/icons/icon-play.svg") no-repeat;
-    background-size: 80px 50px;
+    background-size: 40px 50px;
+    background-position: 20px center;
     opacity: 0.3;
     cursor: pointer; }
   .player__forward {
@@ -1122,6 +1129,39 @@ body {
     border-radius: 50%;
     background: #ab9c95;
     cursor: pointer; }
+  .player__speed-up, .player__speed-down {
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.5em;
+    top: 2px;
+    font-weight: bold;
+    padding: 10px; }
+  .player__options {
+    position: absolute;
+    width: 200px;
+    height: 3em;
+    background: url("../img/icons/icon-options.svg") no-repeat;
+    background-size: 2em 2em;
+    top: 150px;
+    left: 0px;
+    text-align: center;
+    vertical-align: middle; }
+  .player__options > * {
+    display: none; }
+  .player__options:hover {
+    border-radius: 1em;
+    background: #cbc2bd; }
+  .player__options:hover > * {
+    display: inline-block;
+    vertical-align: bottom; }
+  .player__speed-text, .player__speed-val {
+    padding: 15px 0 10px 0;
+    font-family: lora, "Lucida Bright", Georgia, serif;
+    color: #241c18; }
+  .player__speed-up {
+    right: 15px; }
+  .player__speed-down {
+    left: 15px; }
 
 .schedule {
   position: absolute;

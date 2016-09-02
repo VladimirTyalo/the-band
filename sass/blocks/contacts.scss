@@ -53,6 +53,7 @@
     text-transform: uppercase;
     @include font(36px, 55px);
     @include block-align("inline-block", "bottom");
+    height: 58px;
     &:hover {
       background: $color-bronco;
     }

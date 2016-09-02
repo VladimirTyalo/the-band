@@ -6,7 +6,8 @@ var Player = require("./../js/player/player").Player,
     StopState = states.StopState,
     PauseState = states.PauseState,
     assert = require("chai").assert,
-    jsdom  = require("mocha-jsdom");
+    jsdom  = require("mocha-jsdom"),
+    playerDAO  = require("./../js/player/playerDAO");
 
 
 describe("Player api test", function () {
@@ -28,10 +29,10 @@ describe("Player api test", function () {
   });
 
   it("should create private variables with initial values", function () {
-    assert.deepEqual(player._trackList, trackList);
-    assert.deepEqual(player._audioTrack, trackList[0]);
-    assert.deepEqual(player._currentTime, 0);
-    assert.deepEqual(player._playBackRate, 1);
+    //assert.deepEqual(player._trackList, trackList);
+    //assert.deepEqual(player.track, trackList[0]);
+    //assert.deepEqual(player.currentTime, 0);
+    //assert.deepEqual(player.playbackRate, 1);
     assert.deepEqual(player.state === states.STOPPED, true);
   });
 
@@ -40,20 +41,20 @@ describe("Player api test", function () {
     player.currentTime = 10;
     assert.equal(player.currentTime, expected);
 
-    player.audioTrack = "hello";
-    assert.equal(player.audioTrack, "hello");
+    player.track = "hello";
+    assert.equal(player.track, "hello");
   });
 
   it("should reset initial player values   when changing trackList, new tracks currentTime should also be reset to 0", function () {
-    var newTrackList    = [{currentTime: 10, src: "track0"}, {currentTime: 11, src: "track1"}];
-    player.currentTime  = 123;
-    player.audioTrack   = "old Track";
-    player.state = states.STOPPED;
-    player.trackList = newTrackList;
+    var newTrackList   = [{currentTime: 10, src: "track0"}, {currentTime: 11, src: "track1"}];
+    player.currentTime = 123;
+    player.track       = "old Track";
+    player.state       = states.STOPPED;
+    player.trackList   = newTrackList;
 
     assert.equal(player._trackList[0].currentTime, 0, "trackLIst current Time");
     assert.equal(player.currentTime, 0, "player current Time");
-    assert.equal(player.audioTrack.src, newTrackList[0].src, "new initial audio src");
+    assert.equal(player.track.src, newTrackList[0].src, "new initial audio src");
     assert.equal(player.state === states.STOPPED, true, "expected instanceof StropState");
   });
 
@@ -61,7 +62,7 @@ describe("Player api test", function () {
     var delta    = 3;
     var expected = delta + 1;
     player.speedUp(delta);
-    assert.equal(player._playBackRate, expected, "actual " + player._playBackRate + " expected: " + expected);
+    assert.equal(player._playbackRate, expected, "actual " + player._playbackRate + " expected: " + expected);
 
     var oldRate = player.playBackRate;
     player.speedUp(13);
@@ -84,6 +85,7 @@ describe("Player api test", function () {
 
 
 });
+
 
 
 

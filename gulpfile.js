@@ -101,9 +101,11 @@ gulp.task("serve", function () {
                .pipe(server.reload({stream: true}));
   });
 
-  gulp.watch(config.JS_FILES, ["lint-js", "browserify", "uglify"]);
+  gulp.watch(config.JS_FILES, ["lint-js", "browserify"]);
 
+  gulp.watch(config.JS_CLIENT_SIDE_FILES, ["uglify"]).on("change", server.reload);
 });
+
 
 // optimize images
 gulp.task("images", function () {
@@ -130,7 +132,16 @@ gulp.task("clean", function () {
 });
 
 gulp.task("build", function (fn) {
-
+  runSequence(
+    ["lint-styles", "lint-js", "lint-html"],
+    "clean",
+    "copy",
+    "browserify",
+    "uglify",
+    "style",
+    "images",
+    fn
+  );
 });
 
 
@@ -147,7 +158,7 @@ gulp.task("browserify", function () {
   // we define our input files, which we want to have
   // bundled:
   var files = [
-    './js/player/player.js',
+    './js/main.js',
     './js/script.js'
   ];
   // map them to our stream function
@@ -157,7 +168,7 @@ gulp.task("browserify", function () {
       .pipe(source(entry))
       // rename them to have "bundle as postfix"
       .pipe(rename({
-        extname: '.bundle.js'
+        extname: '.js'
       }))
       .pipe(gulp.dest('js/browserified'));
   });
