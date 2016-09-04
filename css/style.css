@@ -1107,8 +1107,7 @@ body {
     width: 100%;
     height: 7px;
     border-radius: 4px;
-    background: #ab9c95;
-    cursor: pointer; }
+    background: #ab9c95; }
   .player__progress-past {
     position: absolute;
     top: 120px;
@@ -1117,8 +1116,7 @@ body {
     width: 50%;
     height: 7px;
     border-radius: 4px;
-    background: #e4dddb;
-    cursor: pointer; }
+    background: #e4dddb; }
   .player__progress-current {
     position: absolute;
     top: 106px;
