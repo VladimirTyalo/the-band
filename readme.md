@@ -7,7 +7,7 @@
     by  [Anna Dadej](https://www.behance.net/gallery/31968773/The-Band-Free-PSD-Template-for-music-related-websites).
    - this psd template provide only one psd for desktop version,
     so I made it RESPONSIVE. 
-   - I also made some javascript functionality like music player and sliders
+   - I also made some javascript functionality like custom music player and sliders
    - It should look nice on all modern browsers and some older like IE10
      (not been tested on IE9 or older)
    - songs are different from what you see in the page. It is a free music compositions
