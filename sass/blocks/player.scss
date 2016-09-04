@@ -57,9 +57,6 @@
     margin-bottom: 23px;
   }
 
-
-
-
   &__song-link {
     display: table;
     width: 100%;
@@ -169,7 +166,6 @@
     height: 7px;
     border-radius: 4px;
     background: $color-bronco;
-    cursor: pointer;
   }
 
   &__progress-past {
@@ -181,8 +177,7 @@
     height: 7px;
     border-radius: 4px;
     background: $color-ebb-1;
-    cursor: pointer;
-    //transition: all 0.1s;
+
   }
 
   &__progress-current {
@@ -195,7 +190,6 @@
     border-radius: 50%;
     background: $color-bronco;
     cursor: pointer;
-    //transition: all 0.1s;
   }
 
   &__speed-up,

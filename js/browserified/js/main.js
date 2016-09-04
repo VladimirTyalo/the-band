@@ -1,8 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports = (function () {
+module.exports = (function (window, document, $) {
   "use strict";
 // --- SCHEDULE SLIDE ---
-(function handleSchedule(window, document, $) {
 
   var $list = $(".schedule__list");
   var $next = $(".schedule__next");
@@ -11,7 +10,6 @@ module.exports = (function () {
 
   var x    = 0;
   var STEP = $item.get(0).offsetHeight;
-
 
   $($next).click(function (ev) {
     ev.preventDefault();
@@ -33,67 +31,64 @@ module.exports = (function () {
     $list.css("transform", "translateY(" + x + "px)");
   });
 
-})(window, document, require("../vendor/jquery-3.1.0"));
-
 });
-},{"../vendor/jquery-3.1.0":7}],2:[function(require,module,exports){
-
-
+},{}],2:[function(require,module,exports){
 (function (document, window, $) {
   "use strict";
-  var Player = require("./player/player").Player;
-  var PlayerDAO = require("./player/playerDAO");
+  var Player       = require("./player/player").Player;
+  var PlayerDAO    = require("./player/playerDAO");
   var HIDDEN_CLASS = "visually-hidden";
-  var schedule  = require("./conserts/schedule");
+  var schedule     = require("./conserts/schedule");
+  var slider = require("./slider/about-slider");
 
 
-
-    var albumButtons = document.querySelectorAll(".player__icon-play");
-    var audioSources = document.querySelectorAll(".player__song-src");
-    var songSet = document.querySelectorAll(".player__song");
-    // reset no-js setup
-    initPlayer();
-
-    schedule();
-
-    var controls = document.querySelector(".player__controls");
-    var playList = document.querySelector(".player__album");
-    var audioList = playList.querySelectorAll("audio");
-    var player = new Player(audioList);
-    var trackList = document.querySelector(".player__album");
-
-    var playerDao = new PlayerDAO(controls, trackList);
-    playerDao.subscribe(player);
+  var albumButtons = document.querySelectorAll(".player__icon-play");
+  var audioSources = document.querySelectorAll(".player__song-src");
+  var songSet      = document.querySelectorAll(".player__song");
 
 
+  slider(document, window, $);
+  schedule(document, window, $);
+
+  // remove no-js classes, hide audio elements, set some data attributes
+  initPlayer();
 
 
+  // set up player and it's view representation to work as subject(Player) and subscriber(DAO - DOM access object)
+  var controls  = document.querySelector(".player__controls");
+  var playList  = document.querySelector(".player__album");
+  var audioList = playList.querySelectorAll("audio");
+  var player    = new Player(audioList);
+  var trackList = document.querySelector(".player__album");
 
-    function initPlayer() {
-      toArray(albumButtons).forEach(function (el) {
-        el.classList.remove("player__icon-play--no-js");
-      });
-
-      toArray(audioSources).forEach(function (el) {
-        el.classList.add(HIDDEN_CLASS);
-      });
-
-      toArray(songSet).forEach(function (el, index) {
-        el.setAttribute("data-track-number", index);
-        if (index !== 0) el.querySelector("a").classList.remove("player__song-link--active");
-      });
-    }
-
-    function toArray($elems) {
-      return Array.prototype.slice.call($elems);
-    }
+  var playerDao = new PlayerDAO(controls, trackList);
+  playerDao.subscribe(player);
 
 
+  function initPlayer() {
 
+
+    toArray(albumButtons).forEach(function (el) {
+      el.classList.remove("player__icon-play--no-js");
+    });
+
+    toArray(audioSources).forEach(function (el) {
+      el.classList.add(HIDDEN_CLASS);
+    });
+
+    toArray(songSet).forEach(function (el, index) {
+      el.setAttribute("data-track-number", index);
+      if (index !== 0) el.querySelector("a").classList.remove("player__song-link--active");
+    });
+  }
+
+  function toArray($elems) {
+    return Array.prototype.slice.call($elems);
+  }
 
 
 })(document, window, require("./vendor/jquery-3.1.0.js"));
-},{"./conserts/schedule":1,"./player/player":5,"./player/playerDAO":6,"./vendor/jquery-3.1.0.js":7}],3:[function(require,module,exports){
+},{"./conserts/schedule":1,"./player/player":5,"./player/playerDAO":6,"./slider/about-slider":7,"./vendor/jquery-3.1.0.js":8}],3:[function(require,module,exports){
 "use strict";
 
 module.exports  = {
@@ -111,9 +106,7 @@ module.exports  = {
   "use strict";
 
   var inputs = require("./input-names");
-
-  var state = {
-
+  var state  = {
     PLAYING: {
       _REWIND_STEP: 30,
       _RATE_INCREMENT: 0.1,
@@ -244,7 +237,6 @@ module.exports  = {
   var state = require("./player-states"),
       input = require("./input-names");
 
-
 // define Player class
   function Player(trackList) {
     this._currentTime  = 0;
@@ -256,7 +248,7 @@ module.exports  = {
     this._playbackRate = this._track.playbackRate || 1;
 
     var timerHandler;
-    var UPDATE_INTERVAL = 50; //  ms
+    var UPDATE_INTERVAL = 80; //  ms
     var MAX_RATE        = 3;
     var MIN_RATE        = 0.5;
     var self            = this;
@@ -331,7 +323,6 @@ module.exports  = {
           timerHandler = setInterval(function () {
             self.update();
           }, UPDATE_INTERVAL);
-
         }
       },
 
@@ -416,8 +407,6 @@ module.exports  = {
   }
 
   module.exports.Player = Player;
-
-
 })();
 
 
@@ -431,6 +420,8 @@ module.exports  = {
   "use strict";
   var states = require("./player-states");
 
+  // Player DOM access object requires the html to have data-action attributes for controls
+  // and classes ".player__ " to update current track info and styling elements
   function PlayerDAO(controls, album) {
     this._btnPlay         = controls.querySelector('[data-action="play"]');
     this._btnDragPosition = controls.querySelector("[data-action='drag']");
@@ -449,6 +440,17 @@ module.exports  = {
     this._player;
     var self = this;
 
+    init();
+
+    this.subscribe = function (player) {
+      this._player = player;
+      player.addSubscriber(this);
+    };
+
+    this.unsibscribe = function () {
+      self._player.removeSubscriber(this);
+    };
+
     this.update = function update(player) {
       this._player = player;
       var state    = player.state;
@@ -458,7 +460,6 @@ module.exports  = {
 
         case states.PLAYING:
         {
-
           this._btnPlay.classList.remove("player__play");
           this._btnPlay.classList.add("player__pause");
           if (this._btnPlay.getAttribute("data-action") === "play") {
@@ -487,71 +488,38 @@ module.exports  = {
       }
 
       updateCurentTimeInfo();
-
     };
 
-    function updateCurentTimeInfo() {
-      if (self._timeInfo) self._timeInfo.innerText = getCurrentTime(self._player.currentTime);
-
-      if (self._durationInfo) self._durationInfo.innerText = getCurrentTime(self._player.track.duration);
-    }
-
-    function getCurrentTime(timeSeconds) {
-      var minutes = (+timeSeconds / 60).toFixed(0);
-      var seconds = (+timeSeconds % 60).toFixed(0);
-      return minutes + ":" + toTwoDigitString(seconds);
-    }
-
-
-    function getScale() {
-      var width    = self._progressBar.offsetWidth - self._btnDragPosition.offsetWidth;
-      var fullTime = self._player.track.duration;
-      var scale    = width / fullTime;
-      return scale;
-    }
-
-    function updateProgressBar(scale) {
-      self._btnDragPosition.style.left = self._player.currentTime * scale + "px";
-      self._progressPlayed.style.width = self._player.currentTime * scale + "px";
-      self._playbackRate.innerText     = (self._player.playbackRate).toFixed(1) + "x";
-    }
-
-    this.subscribe = function (player) {
-      this._player = player;
-      player.addSubscriber(this);
-    };
-
-    this.unsibscribe = function () {
-      self._player.removeSubscriber(this);
-    };
-
+    // adding event listeners to controls and player list elements
     function init() {
 
       // handling scrollbar
       controls.addEventListener("mousedown", function mouseDown(ev) {
         ev.preventDefault();
 
-
         var controlPanel = ev.target;
         if (controlPanel.getAttribute("data-action") !== "drag") return;
-
 
         controls.addEventListener("mousemove", function mouseMove(ev) {
           ev.preventDefault();
 
           // play previous track without moving progressBar
           self.unsibscribe();
+
           var x         = ev.clientX;
           var rect      = controls.getBoundingClientRect();
           var left      = x - rect.left;
           var btnRadius = self._btnDragPosition.offsetWidth / 2;
 
+          // move dragging element according to x position of the mouse
           if (left > btnRadius && x < rect.right - btnRadius) {
             var currentX                     = left - btnRadius + "px";
             self._btnDragPosition.style.left = currentX;
             self._progressPlayed.style.width = self._btnDragPosition.getBoundingClientRect().left - rect.left + "px";
           }
+
           updateCurentTimeInfo();
+
           document.body.addEventListener("mouseup", function mouseUp(ev) {
             var scale = getScale();
             var left  = ev.clientX - rect.left;
@@ -561,9 +529,7 @@ module.exports  = {
             self.subscribe(self._player);
             self._player.currentTime = left / scale;
 
-
             document.body.removeEventListener("mouseup", mouseUp);
-
           });
         });
       });
@@ -591,7 +557,6 @@ module.exports  = {
         self._player.handleInput(action);
       };
 
-
       album.onclick = function (ev) {
         ev.preventDefault();
         var target = getAncestor(ev.target, function (el) {
@@ -613,15 +578,11 @@ module.exports  = {
         var trackNumber = toTwoDigitString(number + 1) + ". ";
 
         // update main track info
-
         self._albumInfo.innerText   = albumTitle;
         self._trackName.innerText   = trackName;
         self._trackNumber.innerText = trackNumber;
-
       };
     }
-
-    init();
 
 
     function toTwoDigitString(number) {
@@ -629,7 +590,33 @@ module.exports  = {
       return "0" + number;
     }
 
-    // helper function to add active class to one of the list elements and remove from others and add        inactive class to all elements except activageIndex element
+    function updateCurentTimeInfo() {
+      if (self._timeInfo) self._timeInfo.innerText = compoundStringTime(self._player.currentTime);
+
+      if (self._durationInfo) self._durationInfo.innerText = compoundStringTime(self._player.track.duration);
+    }
+
+    function compoundStringTime(timeSeconds) {
+      var minutes = (+timeSeconds / 60).toFixed(0);
+      var seconds = (+timeSeconds % 60).toFixed(0);
+      return minutes + ":" + toTwoDigitString(seconds);
+    }
+
+
+    function getScale() {
+      var width    = self._progressBar.offsetWidth - self._btnDragPosition.offsetWidth;
+      var fullTime = self._player.track.duration;
+      var scale    = width / fullTime;
+      return scale;
+    }
+
+    function updateProgressBar(scale) {
+      self._btnDragPosition.style.left = self._player.currentTime * scale + "px";
+      self._progressPlayed.style.width = self._player.currentTime * scale + "px";
+      self._playbackRate.innerText     = (self._player.playbackRate).toFixed(1) + "x";
+    }
+
+    // helper function to add active class to one of the list elements and remove   from others and add        inactive class to all elements except activageIndex element
     function switchActiveElement(elements, activateIndex, activeClass, inactiveClass) {
       toArray(elements).forEach(function (el, index) {
         // add active element class
@@ -654,7 +641,6 @@ module.exports  = {
       return Array.prototype.slice.call($elems);
     }
 
-
     // find the ancestor of element  that match filter function criteria
     function getAncestor(elem, filter) {
       var currElem = elem;
@@ -666,12 +652,115 @@ module.exports  = {
         currElem = currElem.parentElement;
       }
     }
-
   }
 
   module.exports = PlayerDAO;
 })();
 },{"./player-states":4}],7:[function(require,module,exports){
+module.exports = (function (document, window, $) {
+  "use strict";
+// --- SLIDER ---
+  var HIDDEN_CLASS = "visually-hidden";
+
+// gather '.about' slider elements
+  var $members   = $(".about__member");
+  var $arrowPrev = $(".about__prev");
+  var $arrowNext = $(".about__next");
+  var $slides    = $(".about__slide");
+
+
+  var MEMBER_ACTIVE_CLASS = "about__member--active";
+  var ATTR_DATA_SLIDE_TO  = "data-slide-to";
+
+  $($arrowPrev).click(function (ev) {
+    ev.preventDefault();
+
+    var $activeMember = $("." + MEMBER_ACTIVE_CLASS);
+    var activeIndex   = $activeMember.attr(ATTR_DATA_SLIDE_TO);
+    var prevIndex     = +activeIndex - 1;
+
+    if (prevIndex >= 0) {
+      checkMember(prevIndex);
+    }
+  });
+
+
+  $($arrowNext).click(function (ev) {
+    ev.preventDefault();
+
+    var $activeMember = $("." + MEMBER_ACTIVE_CLASS);
+    var activeIndex   = $activeMember.attr(ATTR_DATA_SLIDE_TO);
+    var nextIndex     = +activeIndex + 1;
+
+    if (nextIndex < $members.length) {
+      checkMember(nextIndex);
+    }
+  });
+
+
+  $($members).click(function (ev) {
+    // if there is next slide => hide current and show next
+    ev.preventDefault();
+
+    var $target = getAncestor(ev.target, function (el) {
+      return !!el.getAttribute(ATTR_DATA_SLIDE_TO);
+    });
+
+    var slideNumber = $target.getAttribute(ATTR_DATA_SLIDE_TO);
+
+    if (slideNumber !== undefined) {
+      checkMember(slideNumber);
+    }
+  });
+
+
+  function checkMember(slideNumber) {
+    switchActiveElement($members, slideNumber, MEMBER_ACTIVE_CLASS, "");
+    switchActiveElement($slides, slideNumber, "", HIDDEN_CLASS);
+  }
+
+
+  function toArray($elems) {
+    return Array.prototype.slice.call($elems);
+  }
+
+// find the ancestor of element  that match filter function criteria
+  function getAncestor(elem, filter) {
+    var currElem = elem;
+
+    while (currElem !== document) {
+      if (filter(currElem)) {
+        return currElem;
+      }
+      currElem = currElem.parentElement;
+    }
+  }
+
+
+// helper function to add active class to one of the list elements and
+// remove from others and add inactive class to all elements except activateIndex element
+  function switchActiveElement(elements, activateIndex, activeClass, inactiveClass) {
+    toArray(elements).forEach(function (el, index) {
+      // add active element class
+      if (index === (+activateIndex)) {
+        if (inactiveClass !== "") el.classList.remove(inactiveClass);
+        if (activeClass !== "" && !el.classList.contains(activeClass)) {
+          el.classList.add(activeClass);
+        }
+      }
+      // remove inactive element class
+      else {
+        if (activeClass !== "") el.classList.remove(activeClass);
+        if (inactiveClass !== "" && !el.classList.contains(inactiveClass)) {
+          el.classList.add(inactiveClass);
+        }
+      }
+    });
+  }
+
+});
+
+},{}],8:[function(require,module,exports){
 /*eslint-disable no-unused-vars*/
 /*!
  * jQuery JavaScript Library v3.1.0

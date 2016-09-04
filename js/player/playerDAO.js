@@ -2,6 +2,8 @@
   "use strict";
   var states = require("./player-states");
 
+  // Player DOM access object requires the html to have data-action attributes for controls
+  // and classes ".player__ " to update current track info and styling elements
   function PlayerDAO(controls, album) {
     this._btnPlay         = controls.querySelector('[data-action="play"]');
     this._btnDragPosition = controls.querySelector("[data-action='drag']");
@@ -20,6 +22,17 @@
     this._player;
     var self = this;
 
+    init();
+
+    this.subscribe = function (player) {
+      this._player = player;
+      player.addSubscriber(this);
+    };
+
+    this.unsibscribe = function () {
+      self._player.removeSubscriber(this);
+    };
+
     this.update = function update(player) {
       this._player = player;
       var state    = player.state;
@@ -29,7 +42,6 @@
 
         case states.PLAYING:
         {
-
           this._btnPlay.classList.remove("player__play");
           this._btnPlay.classList.add("player__pause");
           if (this._btnPlay.getAttribute("data-action") === "play") {
@@ -58,71 +70,38 @@
       }
 
       updateCurentTimeInfo();
-
     };
 
-    function updateCurentTimeInfo() {
-      if (self._timeInfo) self._timeInfo.innerText = getCurrentTime(self._player.currentTime);
-
-      if (self._durationInfo) self._durationInfo.innerText = getCurrentTime(self._player.track.duration);
-    }
-
-    function getCurrentTime(timeSeconds) {
-      var minutes = (+timeSeconds / 60).toFixed(0);
-      var seconds = (+timeSeconds % 60).toFixed(0);
-      return minutes + ":" + toTwoDigitString(seconds);
-    }
-
-
-    function getScale() {
-      var width    = self._progressBar.offsetWidth - self._btnDragPosition.offsetWidth;
-      var fullTime = self._player.track.duration;
-      var scale    = width / fullTime;
-      return scale;
-    }
-
-    function updateProgressBar(scale) {
-      self._btnDragPosition.style.left = self._player.currentTime * scale + "px";
-      self._progressPlayed.style.width = self._player.currentTime * scale + "px";
-      self._playbackRate.innerText     = (self._player.playbackRate).toFixed(1) + "x";
-    }
-
-    this.subscribe = function (player) {
-      this._player = player;
-      player.addSubscriber(this);
-    };
-
-    this.unsibscribe = function () {
-      self._player.removeSubscriber(this);
-    };
-
+    // adding event listeners to controls and player list elements
     function init() {
 
       // handling scrollbar
       controls.addEventListener("mousedown", function mouseDown(ev) {
         ev.preventDefault();
 
-
         var controlPanel = ev.target;
         if (controlPanel.getAttribute("data-action") !== "drag") return;
-
 
         controls.addEventListener("mousemove", function mouseMove(ev) {
           ev.preventDefault();
 
           // play previous track without moving progressBar
           self.unsibscribe();
+
           var x         = ev.clientX;
           var rect      = controls.getBoundingClientRect();
           var left      = x - rect.left;
           var btnRadius = self._btnDragPosition.offsetWidth / 2;
 
+          // move dragging element according to x position of the mouse
           if (left > btnRadius && x < rect.right - btnRadius) {
             var currentX                     = left - btnRadius + "px";
             self._btnDragPosition.style.left = currentX;
             self._progressPlayed.style.width = self._btnDragPosition.getBoundingClientRect().left - rect.left + "px";
           }
+
           updateCurentTimeInfo();
+
           document.body.addEventListener("mouseup", function mouseUp(ev) {
             var scale = getScale();
             var left  = ev.clientX - rect.left;
@@ -132,9 +111,7 @@
             self.subscribe(self._player);
             self._player.currentTime = left / scale;
 
-
             document.body.removeEventListener("mouseup", mouseUp);
-
           });
         });
       });
@@ -162,7 +139,6 @@
         self._player.handleInput(action);
       };
 
-
       album.onclick = function (ev) {
         ev.preventDefault();
         var target = getAncestor(ev.target, function (el) {
@@ -184,15 +160,11 @@
         var trackNumber = toTwoDigitString(number + 1) + ". ";
 
         // update main track info
-
         self._albumInfo.innerText   = albumTitle;
         self._trackName.innerText   = trackName;
         self._trackNumber.innerText = trackNumber;
-
       };
     }
-
-    init();
 
 
     function toTwoDigitString(number) {
@@ -200,7 +172,33 @@
       return "0" + number;
     }
 
-    // helper function to add active class to one of the list elements and remove from others and add        inactive class to all elements except activageIndex element
+    function updateCurentTimeInfo() {
+      if (self._timeInfo) self._timeInfo.innerText = compoundStringTime(self._player.currentTime);
+
+      if (self._durationInfo) self._durationInfo.innerText = compoundStringTime(self._player.track.duration);
+    }
+
+    function compoundStringTime(timeSeconds) {
+      var minutes = (+timeSeconds / 60).toFixed(0);
+      var seconds = (+timeSeconds % 60).toFixed(0);
+      return minutes + ":" + toTwoDigitString(seconds);
+    }
+
+
+    function getScale() {
+      var width    = self._progressBar.offsetWidth - self._btnDragPosition.offsetWidth;
+      var fullTime = self._player.track.duration;
+      var scale    = width / fullTime;
+      return scale;
+    }
+
+    function updateProgressBar(scale) {
+      self._btnDragPosition.style.left = self._player.currentTime * scale + "px";
+      self._progressPlayed.style.width = self._player.currentTime * scale + "px";
+      self._playbackRate.innerText     = (self._player.playbackRate).toFixed(1) + "x";
+    }
+
+    // helper function to add active class to one of the list elements and remove   from others and add        inactive class to all elements except activageIndex element
     function switchActiveElement(elements, activateIndex, activeClass, inactiveClass) {
       toArray(elements).forEach(function (el, index) {
         // add active element class
@@ -225,7 +223,6 @@
       return Array.prototype.slice.call($elems);
     }
 
-
     // find the ancestor of element  that match filter function criteria
     function getAncestor(elem, filter) {
       var currElem = elem;
@@ -237,7 +234,6 @@
         currElem = currElem.parentElement;
       }
     }
-
   }
 
   module.exports = PlayerDAO;

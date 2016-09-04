@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
+    <link rel="shortcut icon" type="image/png" href="img/icons/favicon.png"/>
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css">
@@ -12,22 +13,22 @@
   <body>
     <header class="header" id="home">
       <div class="container">
-        <nav class="menu">
-          <ul class="menu__list">
-            <li class="menu__item">
+        <nav class="menu" role="navigation">
+          <ul class="menu__list" role="menu">
+            <li class="menu__item" role="menuitem">
               <a href="#home" class="menu__link">home</a>
 
             </li>
-            <li class="menu__item">
+            <li class="menu__item" role="menuitem">
               <a href="#about" class="menu__link">about</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" role="menuitem">
               <a href="#music" class="menu__link">music</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" role="menuitem">
               <a href="#tours" class="menu__link">tours</a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item" role="menuitem">
               <a href="#contacts" class="menu__link">contacts</a>
             </li>
           </ul>
@@ -46,37 +47,37 @@
       <section class="about" id="about">
         <div class="container">
           <div class="about__slider">
-            <button class="about__prev"></button>
-            <button class="about__next"></button>
+            <button class="about__prev" role="button"></button>
+            <button class="about__next" role="button"></button>
 
-            <ul class="about__members">
-              <li class="about__member" data-slide-to="0">
+            <ul class="about__members" role="radiogroup">
+              <li class="about__member" data-slide-to="0" role="radio">
                 <span class="about__name">Lawrie Alton</span>
                 <span class="about__role">Vocalist</span>
               </li>
-              <li class="about__member" data-slide-to="1">
+              <li class="about__member" data-slide-to="1" role="radio">
                 <span class="about__name">Charles Timmy</span>
                 <span class="about__role">Guitar</span>
               </li>
-              <li class="about__member about__member--active" data-slide-to="2">
+              <li class="about__member about__member--active" data-slide-to="2" role="radio">
                 <span class="about__name">Curt Sheard</span>
                 <span class="about__role">Bass</span>
               </li>
-              <li class="about__member" data-slide-to="3">
+              <li class="about__member" data-slide-to="3" role="radio">
                 <span class="about__name">Cade Ryker</span>
                 <span class="about__role">drums</span>
               </li>
-              <li class="about__member" data-slide-to="4">
+              <li class="about__member" data-slide-to="4" role="radio">
                 <span class="about__name">Tommie Brendan</span>
                 <span class="about__role">electronics</span>
               </li>
             </ul>
 
-            <div class="about__slides">
-              <article class="about__slide visually-hidden">
+            <div class="about__slides" role="slider">
+              <article class="about__slide visually-hidden" role="article">
                 <div class="about__person">
-                  <img src="img/black-star-small.jpg" alt="black-star" class="about__photo" width="730" height="762">
-                  <h2 class="about__full-name">
+                  <img src="img/black-star-small.jpg" alt="black-star" class="about__photo" width="730" height="762" role="img">
+                  <h2 class="about__full-name" role="heading">
                     <span>Lawrie</span>
                     <br>
                     <span>Alton</span>
@@ -84,14 +85,14 @@
                 </div>
                 <div class="about__content">
                   <h3 class="about__title">Meet out band</h3>
-                  <p class="about__text">
+                  <p class="about__text" role="contentinfo">
                     Court Sheard, swag iPhone neutra williamsburg, sriracha you probably haven't heard of them PBR&B marfa seitan. Four dollar toast wayfarers helvetica etsy, affogato pinterest schlitz. Squid yr mlkshk, pinterest pour-over polaroid photo booth. Yr fixie plaid kogi.
                   </p>
                 </div>
               </article>
 
 
-              <article class="about__slide visually-hidden">
+              <article class="about__slide visually-hidden" role="article">
                 <div class="about__person">
                   <img src="img/black-star-small.jpg" alt="black-star" class="about__photo" width="730" height="762">
                   <h2 class="about__full-name">
@@ -102,14 +103,14 @@
                 </div>
                 <div class="about__content">
                   <h3 class="about__title">Meet out band</h3>
-                  <p class="about__text">
+                  <p class="about__text" role="contentinfo">
                     Court Sheard, swag iPhone neutra williamsburg, sriracha you probably haven't heard of them PBR&B marfa seitan. Four dollar toast wayfarers helvetica etsy, affogato pinterest schlitz. Squid yr mlkshk, pinterest pour-over polaroid photo booth. Yr fixie plaid kogi.
                   </p>
                 </div>
               </article>
 
 
-              <article class="about__slide">
+              <article class="about__slide" role="article">
                 <div class="about__person">
                   <img src="img/black-star-small.jpg" alt="black-star" class="about__photo" width="730" height="762">
                   <h2 class="about__full-name">
@@ -120,14 +121,14 @@
                 </div>
                 <div class="about__content">
                   <h3 class="about__title">Meet out band</h3>
-                  <p class="about__text">
+                  <p class="about__text" role="contentinfo">
                     Court Sheard, swag iPhone neutra williamsburg, sriracha you probably haven't heard of them PBR&B marfa seitan. Four dollar toast wayfarers helvetica etsy, affogato pinterest schlitz. Squid yr mlkshk, pinterest pour-over polaroid photo booth. Yr fixie plaid kogi.
                   </p>
                 </div>
               </article>
 
 
-              <article class="about__slide visually-hidden">
+              <article class="about__slide visually-hidden" role="article">
                 <div class="about__person">
                   <img src="img/black-star-small.jpg" alt="black-star" class="about__photo" width="730" height="762">
                   <h2 class="about__full-name">
@@ -138,14 +139,14 @@
                 </div>
                 <div class="about__content">
                   <h3 class="about__title">Meet out band</h3>
-                  <p class="about__text">
+                  <p class="about__text" role="contentinfo">
                     Court Sheard, swag iPhone neutra williamsburg, sriracha you probably haven't heard of them PBR&B marfa seitan. Four dollar toast wayfarers helvetica etsy, affogato pinterest schlitz. Squid yr mlkshk, pinterest pour-over polaroid photo booth. Yr fixie plaid kogi.
                   </p>
                 </div>
               </article>
 
 
-              <article class="about__slide visually-hidden">
+              <article class="about__slide visually-hidden" role="article">
                 <div class="about__person">
                   <img src="img/black-star-small.jpg" alt="black-star" class="about__photo" width="730" height="762">
                   <h2 class="about__full-name">
@@ -156,7 +157,7 @@
                 </div>
                 <div class="about__content">
                   <h3 class="about__title">Meet out band</h3>
-                  <p class="about__text">
+                  <p class="about__text" role="contentinfo">
                     Court Sheard, swag iPhone neutra williamsburg, sriracha you probably haven't heard of them PBR&B marfa seitan. Four dollar toast wayfarers helvetica etsy, affogato pinterest schlitz. Squid yr mlkshk, pinterest pour-over polaroid photo booth. Yr fixie plaid kogi.
                   </p>
                 </div>
@@ -172,7 +173,7 @@
         <div class="container">
           <div class="catalog">
             <div class="catalog__img-wrapper">
-              <img class="catalog__album-photo" src="img/discs.jpg" alt="album surprise without flaws">
+              <img class="catalog__album-photo" src="img/discs.jpg" alt="album surprise without flaws" width="626" height="346" role="img">
             </div>
             <h2 class="catalog__title">Discography</h2>
             <ul class="catalog__album-list">
@@ -203,32 +204,32 @@
             </ul>
           </div>
 
-          <div class="player">
+          <div class="player" role="application">
             <div class="player__song-info">
               <h2 class="player__title">Now playing</h2>
               <h3 class="player__current-album">Surprise Without Flaws</h3>
               <div class="player__current-song">
                 <span class="player__current-number">01. </span>
-                <span class="player__current-title">Clouds In The Forest</span>
-                <span class="player__current-time">1:30</span>/
+                <span class="player__current-title" role="heading">Clouds In The Forest</span>
+                <span class="player__current-time" role="timer">1:30</span>/
                 <span class="player__duration">3:00</span>
               </div>
             </div>
 
             <div class="player__controls">
-              <div class="player__rewind" data-action="rewind"></div>
-              <div class="player__play" data-action="play" data-play="true"></div>
-              <div class="player__forward" data-action="forward"></div>
+              <div class="player__rewind" data-action="rewind" role="button"></div>
+              <div class="player__play" data-action="play" data-play="true" role="button"></div>
+              <div class="player__forward" data-action="forward" role="button"></div>
               <div class="player__progress" data-action="progress-bar">
                 <div class="player__progress-past" data-action="played"></div>
                 <div class="player__progress-current" data-action="drag"></div>
                 <div class="player__progress-future" data-action="progress-bar"></div>
               </div>
               <div class="player__options">
-                <div class="player__speed-up" data-action="speed-up">+</div>
+                <div class="player__speed-up" data-action="speed-up" role="button" title="speed up">+</div>
                 <span class="player__speed-text">speed: </span>
                 <span class="player__speed-val" data-value="playback-rate">1.0x</span>
-                <div class="player__speed-down" data-action="speed-down">-</div>
+                <div class="player__speed-down" data-action="speed-down" role="button" title="speed down">-</div>
               </div>
             </div>
 
@@ -244,7 +245,7 @@
                     </span>
                     <span class="player__song-duration">3:20</span>
                   </a>
-                  <audio controls class="player__song-src" preload="metadata">
+                  <audio controls class="player__song-src" preload="none">
                     <source src="media/Lobo_Loco_-_06_-_Swining_Sofas.mp3" type="audio/mpeg">
                   </audio>
 
@@ -257,7 +258,7 @@
                     <span class="player__song-dots"></span>
                     <span class="player__song-duration">2:48</span>
                   </a>
-                  <audio controls class="player__song-src" preload="metadata">
+                  <audio controls class="player__song-src" preload="none">
                     <source src="media/Doctor_Turtle_-_04_-_Im_What_Youd_Be_Without_Her.mp3" type="audio/mpeg">
                   </audio>
 
@@ -270,7 +271,7 @@
                     <span class="player__song-dots"></span>
                     <span class="player__song-duration">2:27</span>
                   </a>
-                  <audio controls class="player__song-src "  preload="metadata">
+                  <audio controls class="player__song-src "  preload="none">
                     <source src="media/Jahzzar_-_01_-_Roads_that_burned_our_boots.mp3" type="audio/mpeg">
                   </audio>
 
@@ -283,7 +284,7 @@
                     <span class="player__song-dots"></span>
                     <span class="player__song-duration">3:32</span>
                   </a>
-                  <audio controls class="player__song-src " preload="metadata">
+                  <audio controls class="player__song-src " preload="none">
                     <source src="media/Jahzzar_-_01_-_The_last_ones.mp3" type="audio/mpeg">
                   </audio>
 
@@ -296,7 +297,7 @@
                     <span class="player__song-dots"></span>
                     <span class="player__song-duration">2:40</span>
                   </a>
-                  <audio controls class="player__song-src " preload="metadata">
+                  <audio controls class="player__song-src " preload="none">
                     <source src="media/Nutmeg_-_10_-_Swans.mp3" type="audio/mpeg">
                   </audio>
 
@@ -309,7 +310,7 @@
                     <span class="player__song-dots"></span>
                     <span class="player__song-duration">2:55</span>
                   </a>
-                  <audio controls class="player__song-src " preload="metadata">
+                  <audio controls class="player__song-src " preload="none">
                     <source src="media/Slinte_-_09_-_Banish%20(1).mp3" type="audio/mpeg">
                   </audio>
 
@@ -322,7 +323,7 @@
                     <span class="player__song-dots"></span>
                     <span class="player__song-duration">1:33</span>
                   </a>
-                  <audio controls class="player__song-src " preload="metadata">
+                  <audio controls class="player__song-src " preload="none">
                     <source src="media/Slinte_-_10_-_Julia_Delaney.mp3" type="audio/mpeg">
                   </audio>
 
@@ -335,7 +336,7 @@
                     <span class="player__song-dots"></span>
                     <span class="player__song-duration">1:33</span>
                   </a>
-                  <audio controls class="player__song-src " preload="metadata">
+                  <audio controls class="player__song-src " preload="none">
                     <source src="media/The_Rope_River_Blues_Band_-_05_-_Capulet.mp3" type="audio/mpeg">
                   </audio>
 
@@ -348,7 +349,7 @@
                     <span class="player__song-dots"></span>
                     <span class="player__song-duration">3:24</span>
                   </a>
-                  <audio controls class="player__song-src " preload="metadata">
+                  <audio controls class="player__song-src " preload="none">
                     <source src="media/Yair_Yona_-_01_-_The_Bright_New_Year_By_Bert_Jansch.mp3" type="audio/mpeg">
                   </audio>
 
@@ -536,9 +537,6 @@
 
     </footer>
 
-    <!--<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>-->
-    <!--<script src="../js/vendor/jquery-3.1.0.min.js"></script>-->
-
-    <script src="js/script.js"></script>
+    <script src="js/script.js" async></script>
   </body>
 </html>

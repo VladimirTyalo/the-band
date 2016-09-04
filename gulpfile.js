@@ -158,8 +158,7 @@ gulp.task("browserify", function () {
   // we define our input files, which we want to have
   // bundled:
   var files = [
-    './js/main.js',
-    './js/script.js'
+    './js/main.js'
   ];
   // map them to our stream function
   var tasks = files.map(function (entry) {

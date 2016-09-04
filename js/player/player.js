@@ -3,7 +3,6 @@
   var state = require("./player-states"),
       input = require("./input-names");
 
-
 // define Player class
   function Player(trackList) {
     this._currentTime  = 0;
@@ -15,7 +14,7 @@
     this._playbackRate = this._track.playbackRate || 1;
 
     var timerHandler;
-    var UPDATE_INTERVAL = 50; //  ms
+    var UPDATE_INTERVAL = 80; //  ms
     var MAX_RATE        = 3;
     var MIN_RATE        = 0.5;
     var self            = this;
@@ -90,7 +89,6 @@
           timerHandler = setInterval(function () {
             self.update();
           }, UPDATE_INTERVAL);
-
         }
       },
 
@@ -175,8 +173,6 @@
   }
 
   module.exports.Player = Player;
-
-
 })();
 
 

@@ -2,9 +2,7 @@
   "use strict";
 
   var inputs = require("./input-names");
-
-  var state = {
-
+  var state  = {
     PLAYING: {
       _REWIND_STEP: 30,
       _RATE_INCREMENT: 0.1,

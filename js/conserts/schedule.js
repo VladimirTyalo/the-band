@@ -1,7 +1,6 @@
-module.exports = (function () {
+module.exports = (function (window, document, $) {
   "use strict";
 // --- SCHEDULE SLIDE ---
-(function handleSchedule(window, document, $) {
 
   var $list = $(".schedule__list");
   var $next = $(".schedule__next");
@@ -10,7 +9,6 @@ module.exports = (function () {
 
   var x    = 0;
   var STEP = $item.get(0).offsetHeight;
-
 
   $($next).click(function (ev) {
     ev.preventDefault();
@@ -31,7 +29,5 @@ module.exports = (function () {
     x -= STEP;
     $list.css("transform", "translateY(" + x + "px)");
   });
-
-})(window, document, require("../vendor/jquery-3.1.0"));
 
 });
