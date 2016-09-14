@@ -1482,7 +1482,8 @@ body {
     padding-top: 20px;
     padding-left: 0; }
   .player__controls {
-    min-height: 160px; } }
+    min-height: 160px;
+    margin-bottom: 50px; } }
   @media (max-width: 510px) {
   .catalog__album-title {
     border-left: 0;
@@ -1674,8 +1675,8 @@ body {
     background-size: 40px 40px; }
   .player__play {
     top: 40px;
-    left: 45%;
-    width: 40px;
+    left: 40%;
+    width: 50px;
     height: 30px;
     background-size: 40px 30px; }
   .player__forward {
